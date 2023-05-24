@@ -8,8 +8,10 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * status ^definition = "Shall be either unknown, entered-in-error, or the status of the intervention at the time of reporting"
 * intent = #plan
 * activity.detail.status ^definition = "Shall be either unknown, or cancelled, or the activity status of the intervention at the time of reporting"
-* activity.detail.statusReason from CancellationTypes //hvilken type, når interventionen stopper, for at lave en ny, fordi der er sendt en ny GGOP
-
+//* activity.detail.statusReason from CancellationTypes //hvilken type, når interventionen stopper, for at lave en ny, fordi der er sendt en ny GGOP
+* basedOn ..1
+* basedOn only Reference(klgateway-119-care-plan)
+* basedOn ^type.aggregation = #bundled
 * subject only Reference(klgateway-119-citizen) //borger
 * subject ^type.aggregation = #bundled
 * period 1..1
@@ -26,27 +28,21 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * activity.detail.code.coding ^slicing.rules = #closed
 * activity.detail.code.coding contains level2 0..1 and level2temp 0..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = $FSIII
-* activity.detail.code.coding[level2] from KLInterventionCodes119
+* activity.detail.code.coding[level2] from KLInterventionCodes119 //kl-term update Set to 
 * activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
 * activity.detail.code.coding[level2temp] from KLInterventionCodes119temp
+//kl-term update delete two lines above
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
 * activity.detail.reasonCode ..0
-* activity.detail.scheduled[x] ..1 //gør det muligt at lægge gentagelser på
-//* activity.detail.scheduledTiming.repeat.boundsPeriod.start 1..1
-* activity.detail.scheduledTiming.repeat.count 1..1
-* activity.detail.scheduledTiming.repeat.duration 1..1
-* activity.detail.scheduledTiming.repeat.durationUnit 1..1
-* activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
+* activity.detail.scheduled[x] 0..0
 * activity.detail.performer 1..1 //indsatsudfører
 * activity.detail.performer only Reference(klgateway-119-organization)
 * activity.detail.performer ^type.aggregation = #bundled
 * extension contains
-   BasedOnServiceRequestExtension named basedOnServiceRequest 1..1
-
-//* extension[basedOnServiceRequest].valueReference only Reference(klgateway-119-servicerequest) //GGOP'en
+   BasedOnServiceRequestExtension named basedOnServiceRequest 0..1
 * extension[basedOnServiceRequest].valueReference ^type.aggregation = #bundled
 
 // relation mellem tilstand og indsats
@@ -81,43 +77,40 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * activity.detail.reasonReference 0..1
 * activity.detail.goal ..0
 * activity.detail.doNotPerform ..0
-* activity.detail.scheduledString ..0
-* activity.detail.scheduledPeriod ..0
-* activity.detail.scheduledTiming.code 0..0
-* activity.detail.scheduledTiming.event 0..0
-* activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
-* activity.detail.scheduledTiming.repeat.frequency 0..0
-* activity.detail.scheduledTiming.repeat.durationMax 0..0
-* activity.detail.scheduledTiming.repeat.boundsDuration 0..0
-* activity.detail.scheduledTiming.repeat.boundsRange 0..0
-* activity.detail.scheduledTiming.repeat.countMax 0..0
-* activity.detail.scheduledTiming.repeat.dayOfWeek 0..0
+// * activity.detail.scheduledString ..0
+// * activity.detail.scheduledPeriod ..0
+// * activity.detail.scheduledTiming.code 0..0
+// * activity.detail.scheduledTiming.event 0..0
+// * activity.detail.scheduledTiming.repeat.boundsPeriod.end 0..0
+// * activity.detail.scheduledTiming.repeat.frequency 0..0
+// * activity.detail.scheduledTiming.repeat.durationMax 0..0
+// * activity.detail.scheduledTiming.repeat.boundsDuration 0..0
+// * activity.detail.scheduledTiming.repeat.boundsRange 0..0
+// * activity.detail.scheduledTiming.repeat.countMax 0..0
+// * activity.detail.scheduledTiming.repeat.dayOfWeek 0..0
+* activity.detail.statusReason 0..0
 * activity.detail.location ..0
 * activity.detail.product[x] ..0
 * activity.detail.dailyAmount ..0
 * activity.detail.quantity ..0
 * activity.detail.description ..0
+* activity.outcomeReference 0..0
 * note ..0
 
 //Danish descriptions
 * activity.detail.code.coding ^short = "[DK] indsatsskode"
 * period.start ^short = "[DK] indsatsbevillingstid"
 * period.end ^short = "[DK] indsatsafslutningstid"
+* extension[basedOnServiceRequest] ^short = "[DK] indsatsAnledning"
+* activity.detail.performer ^short = "[DK] indsatsleverandør"
+* subject ^short = "[DK] indsatssubjekt"
+* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
+* basedOn ^short = "[DK] indsatsDelAfPlan"
 * status ^short = "[DK] indsatsstatus"
 * intent ^short = "[DK] indsatshensigt"
-* subject ^short = "[DK] indsatssubjekt"
-* activity.reference ^short = "[DK] indsatsAnledning"
-* activity.detail.reasonReference ^short = "[DK] indsatsbegrundelse"
-* activity.outcomeReference ^short = "[DK] indsatsgennemførtAktivitet"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
-* activity.detail.statusReason ^short = "[DK] indsatsAktivitetForklaringAfStatus"
-//* activity.detail.scheduledTiming.repeat.boundsPeriod.start ^short = "[DK] indsatsAktivitetPlanlagtOpstartsdato"
-* activity.detail.scheduledTiming.repeat.count ^short = "[DK] indsatsAktivitetAntalGange"
-* activity.detail.scheduledTiming.repeat.duration ^short = "[DK] indsatsAktivitetLængdeAfGange"
-* activity.detail.scheduledTiming.repeat.durationUnit ^short = "[DK] indsatsAktivitetLængdeAfGangeEnhed"
-* activity.detail.performer ^short = "[DK] indsatsleverandør"
-* obeys klgateway-119-intervention-2
-* obeys klgateway-119-intervention-1
+//* obeys klgateway-119-intervention-2
+//* obeys klgateway-119-intervention-1
 
 Invariant: klgateway-119-intervention-1
 Description: "status reason is mandatory if status is cancelled or stopped. Otherwise it is prohibited"
@@ -170,6 +163,8 @@ Title:     "basedOnServiceRequestExtension"
 Description: "Extension for pointing to the servicerequest, that started an intervention"
 * value[x] 1..1
 * value[x] only Reference(klgateway-119-servicerequest)
+* ^context.type = http://hl7.org/fhir/extension-context-type#element
+* ^context.expression = "CarePlan"
 
 
 Instance: BrunoAfklarendeSamtale
@@ -183,8 +178,7 @@ Usage: #example
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(BrunoTestElmer)
-* extension[basedOnServiceRequest].valueReference = Reference(BrunoRequestInformation) 
-* activity.outcomeReference[+] = Reference(BrunoKontaktAfklarende)
+* extension[basedOnServiceRequest].valueReference = Reference(BrunoRequestInformation)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#completed
 * activity.detail.performer = Reference(UdfoererAfBrunosForebyggelse)
 
@@ -194,14 +188,12 @@ Title: "BrunoKostvejledning"
 Description: "Bruno's Kostvejledning"
 Usage: #example
 * activity.detail.code.coding[level2temp] = Tempcodes#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
+// * activity.detail.code.coding[level2temp] = $FSIII#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
+// kl-term update change Tempcode to $FSIII
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
 * subject = Reference(BrunoTestElmer)
-* extension[basedOnServiceRequest].valueReference = Reference(BrunoRequestInformation) 
-* activity.outcomeReference = Reference(BrunoKontakt1Kost)
+* extension[basedOnServiceRequest].valueReference = Reference(BrunoRequestInformation)
 * activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#in-progress
-* activity.detail.scheduledTiming.repeat.count = 4
-* activity.detail.scheduledTiming.repeat.duration = 20
-* activity.detail.scheduledTiming.repeat.durationUnit = http://unitsofmeasure.org#min
 * activity.detail.performer = Reference(UdfoererAfBrunosForebyggelse)
