@@ -55,7 +55,6 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * identifier ..0
 * instantiatesCanonical ..0
 * instantiatesUri ..0
-* basedOn ..0
 * replaces ..0
 * partOf ..0
 * category ..0
@@ -109,54 +108,30 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * status ^short = "[DK] indsatsstatus"
 * intent ^short = "[DK] indsatshensigt"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
-//* obeys klgateway-119-intervention-2
-//* obeys klgateway-119-intervention-1
+* obeys klgateway-119-intervention-1
+
 
 Invariant: klgateway-119-intervention-1
-Description: "status reason is mandatory if status is cancelled or stopped. Otherwise it is prohibited"
+Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
 Severity: #error
-Expression: "activity.detail.all(statusReason.exists() = (status = 'cancelled' or status = 'stopped'))"
-
-Invariant: klgateway-119-intervention-2
-Description: "scheduled timing is mandatory if the intervention is certain types of interventions. Otherwise it is prohibited"
-Severity: #error
-Expression: "activity.detail.all(scheduledTiming.exists() = (
-       code.coding.code = 'e78c43e3-c512-44b4-ad30-2de43481d9b3'
-    or code.coding.code = 'f490d484-fa43-400b-b678-e718c6927708'
-    or code.coding.code = 'abade2c3-0922-4ec1-b85a-263c85d056fa'
-    or code.coding.code = '122fe9a2-9bff-4c9c-87df-af1e096ad7a6'
-    or code.coding.code = '9143b4b7-7211-45ed-8892-9afb1f2d20b7'
-    or code.coding.code = 'e31355bd-b1a6-4fab-a339-8cec309cad81'
-    or code.coding.code = 'fea40bf1-731f-4d7e-a1d0-38555a553cb7'
-    or code.coding.code = '37d2b78b-4988-4225-afa0-a9642402df38'
-    or code.coding.code = 'eac36593-ad34-4abe-9de0-c408fe7eb3e5'
-    or code.coding.code = '051978fc-599e-4e30-9746-d6d0547a0361'
-    or code.coding.code = 'fe0588d3-d12b-455f-b84c-1fee3c85bfd8'
-    or code.coding.code = 'd83d524f-a01b-4fa0-9324-3bb56c1e79fe'
-    or code.coding.code = 'a616e57f-c780-442e-8c29-b22a72fbe88c'
-    or code.coding.code = 'a05f0199-6b1f-419f-800c-f6348f93751e'
-    or code.coding.code = '1b325914-3a06-437d-9f7e-cd0edbbda32e'
-    or code.coding.code = '30836f9d-c84a-4e48-8d5c-21862747466a'))"
-
-//"Vejledning og introduktion til fysiske aktiviteter på hold"
-// "Vejledning og introduktion til fysiske aktiviteter individuelt"
-// "Fysisk træning på hold"
-// "Fysisk træning individuelt"
-// "Færdighedstræning på hold"
-// "Færdighedstræning individuelt"
-// "Kostvejledning på hold"
-// "Kostvejledning individuelt"
-// "Madlavning i praksis på hold"
-// "Madlavning i praksis individuelt"
-// "Tobaksafvænning på hold"
-// "Tobaksafvænning individuelt"
-// "Sygdomshåndtering på hold"
-// "Sygdomshåndtering individuelt"
-// "Mental håndtering på hold"
-// "Mental håndtering individuelt"
-
-//make fhir path that makes cancallation type mandatory if status is cancelled or stopped.
-//Gør scheduled timing mandatory hvis indsatsen er bestemte typer træning, og ellers ikke tilladt. 
+Expression: "(
+       activity.detail.code.coding.code = 'e78c43e3-c512-44b4-ad30-2de43481d9b3'
+    or activity.detail.code.coding.code = 'f490d484-fa43-400b-b678-e718c6927708'
+    or activity.detail.code.coding.code = 'abade2c3-0922-4ec1-b85a-263c85d056fa'
+    or activity.detail.code.coding.code = '122fe9a2-9bff-4c9c-87df-af1e096ad7a6'
+    or activity.detail.code.coding.code = '9143b4b7-7211-45ed-8892-9afb1f2d20b7'
+    or activity.detail.code.coding.code = 'e31355bd-b1a6-4fab-a339-8cec309cad81'
+    or activity.detail.code.coding.code = 'fea40bf1-731f-4d7e-a1d0-38555a553cb7'
+    or activity.detail.code.coding.code = '37d2b78b-4988-4225-afa0-a9642402df38'
+    or activity.detail.code.coding.code = 'eac36593-ad34-4abe-9de0-c408fe7eb3e5'
+    or activity.detail.code.coding.code = '051978fc-599e-4e30-9746-d6d0547a0361'
+    or activity.detail.code.coding.code = 'fe0588d3-d12b-455f-b84c-1fee3c85bfd8'
+    or activity.detail.code.coding.code = 'd83d524f-a01b-4fa0-9324-3bb56c1e79fe'
+    or activity.detail.code.coding.code = 'a616e57f-c780-442e-8c29-b22a72fbe88c'
+    or activity.detail.code.coding.code = 'a05f0199-6b1f-419f-800c-f6348f93751e'
+    or activity.detail.code.coding.code = '1b325914-3a06-437d-9f7e-cd0edbbda32e'
+    or activity.detail.code.coding.code = '30836f9d-c84a-4e48-8d5c-21862747466a') implies basedOn.exists()"
+ 
 
 Extension: BasedOnServiceRequestExtension
 Title:     "basedOnServiceRequestExtension"
@@ -186,6 +161,23 @@ Instance: BrunoKostvejledning
 InstanceOf: klgateway-119-planned-intervention
 Title: "BrunoKostvejledning"
 Description: "Bruno's Kostvejledning"
+Usage: #example
+* activity.detail.code.coding[level2temp] = Tempcodes#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
+// * activity.detail.code.coding[level2temp] = $FSIII#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
+// kl-term update change Tempcode to $FSIII
+* period.start = 2022-06-02
+* status = http://hl7.org/fhir/request-status#active
+* intent = http://hl7.org/fhir/care-plan-intent#plan
+* subject = Reference(BrunoTestElmer)
+* extension[basedOnServiceRequest].valueReference = Reference(BrunoRequestInformation)
+* activity.detail.status = http://hl7.org/fhir/care-plan-activity-status#in-progress
+* activity.detail.performer = Reference(UdfoererAfBrunosForebyggelse)
+* basedOn = Reference(BrunoforloebKost)
+
+Instance: BrunoKostvejledningValidationError
+InstanceOf: klgateway-119-planned-intervention
+Title: "BrunoKostvejledningValidationError"
+Description: "BrunoKostvejledningValidationError"
 Usage: #example
 * activity.detail.code.coding[level2temp] = Tempcodes#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
 // * activity.detail.code.coding[level2temp] = $FSIII#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"

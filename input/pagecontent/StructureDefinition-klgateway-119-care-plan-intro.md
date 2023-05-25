@@ -1,7 +1,7 @@
 ### Scope and usage
 The CarePlan for §119 is used whenever a prevention/health promotion care pathway is planned for a citizen in Danish municipalities. Care pathway or plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
 
-The two types of plan in §119 are 'Intervention efter §119 sundhedsfremm og forebyggelse' and 'Opfølgningsforløb efter §119 sundhedsfremme og forebyggelse' and one of these two codes should be documented in CarePlan.category.
+The two types of plan in §119 are 'Intervention efter §119' and 'Opfølgningsforløb efter §119' and one of these two codes should be documented in CarePlan.category.
 
 Both types may be delivered with different repetions and duration.
 This is documented using:

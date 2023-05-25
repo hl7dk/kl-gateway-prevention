@@ -10,7 +10,9 @@ Encounter.class is mandatory in FHIR. In Danish municipalities, the values are u
 * Sessions where the citizens visit municipality facilities e.g. for training og cooking class have the code "AMB" ambulatory.
 * For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
 
-All encounters should be related to the ServiceRequest (request for prevention/health promotion according to §119 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn. An encounter may only be related to one ServiceRequest. If a second (updated) request is recieved to replace an existing one, while a citizen already recieves prevention/health promotion, Encounter.basedOn should point to the new service request.
+Encounters may be related to the ServiceRequest (request for prevention/health promotion according to §119 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn.
+
+Encounters can also be related to the CarePlan on which they are a delivery. Use Encounter.extension[basedOnCarePlan].
 
 The time of the encounter is documented in Encounter.period.start, and it is mandatory. The endtime is not mandatory.
 
@@ -29,3 +31,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |borgerkontaktslut|Kontaktens sluttidspunkt, eller planlagte sluttidspunkt|Encounter.period.end|
 |borgerkontaktsubjekt|Den borger kontakten vedrører|Encounter.subject|
 |borgerkontaktanledning|Den henvisning/henvendelse, der er grunden til at denne kontakt udføres|Encounter.basedOn|
+|borgerkontaktBaseretPå|Det indsatsforløb, der er grunden til at denne kontakt udføres|extension[basedOnCarePlan]|

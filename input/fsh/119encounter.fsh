@@ -21,8 +21,12 @@ Description: "Encounter for first planned visits and all executed activities in 
 * subject only Reference(klgateway-119-citizen)
 * subject ^type.aggregation = #bundled
 * episodeOfCare ..0
+* basedOn ..1
 * basedOn only Reference(klgateway-119-servicerequest)
 * basedOn ^type.aggregation = #bundled
+* extension contains
+   BasedOnCarePlanExtension named basedOnCarePlan 0..1
+* extension[basedOnCarePlan].valueReference ^type.aggregation = #bundled
 * participant ..0
 * appointment ..0
 * period 1..1
@@ -45,7 +49,16 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
 * basedOn ^short = "[DK] kontaktanledning"
+* extension[basedOnCarePlan] ^short = "[DK] kontaktBaseretPå"
 
+
+Extension: BasedOnCarePlanExtension
+Title:     "basedOnCarePlanExtension"
+Description: "Extension for pointing to the careplan describing why this encounter is taking place, will be part of R5 without needing the extension"
+* value[x] 1..1
+* value[x] only Reference(klgateway-119-care-plan)
+* ^context.type = http://hl7.org/fhir/extension-context-type#element
+* ^context.expression = "Encounter"
 
 Instance: BrunoKontaktAfklarende
 InstanceOf: klgateway-119-encounter
