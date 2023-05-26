@@ -5,7 +5,7 @@ The ServiceRequest, may have the sending organisation as the requester i.e the h
  
 Intent should always be "plan". The status attribute should be used according to the FHIR-guidance. The citizen is referred in ServiceRequest.subject.
 
-ServiceRequest.authoredOn holds the time, where the request was recieved in the municipality, if this is available. Else, the time that the request was send from the hosptal may be used.
+ServiceRequest.authoredOn holds the time, where the request was recieved in the municipality, if this is available. Else, the time that the request was send from the hosptal may be used. The date may be repported with or without time of day.
 
 ServiceRequest.status and ServiceRequest.intent are mandatory. ServiceRequest.intent always have the value 'plan'. ServiceRequest.status uses the required FHIR ValueSet as appropriate.
 

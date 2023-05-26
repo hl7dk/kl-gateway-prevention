@@ -57,12 +57,12 @@ This model holds a diagnosiscode, as it is reported to the municipality as part 
 ##### Attributes
 * A diagnosis code
 * A reference to the citizen
-* A FHIR status attribute
+* Two FHIR status attributes
 
 ##### Validation
 * One and only one diagnosis code exists and should be drawn from SKS or ICPC2
 * One and only one reference to the citizen exists
-* The FHIR status is mandatory and should be drawn from the appropriate standard FHIR-ValueSet 
+* One FHIR status is mandatory and should be drawn from the appropriate standard FHIR-ValueSet. The other not mandatory, but it is needed for reporting entered-in-error.
 
 ## PlannedIntervention
 This model holds information about prevention/health promotion interventions planned for a citizen.
@@ -74,22 +74,43 @@ This model holds information about prevention/health promotion interventions pla
 * A reference to the Citizen
 * A reference to the ServiceRequest, that started the intervention
 * The reason for the intervention expressed as a reference to Condition
-* References to the encounters associated with this intervention
-* An explaination for cancelling the intervention before its completion
-* A timing consisting of a count, duration and durationUnit to express the time granted to the intervention e.g. "8 times with a duration of 60min"
 * A reference to the organization that delivers the intervention
 * Three FHIR status attributes (status, intent, activity.detail.status)
+* A reference to the care plan that this planned intervention is part of
 
 ##### Validation
 * One and only one FSIII intervention code may be present and it should be drawn from valid §119 FSIII interventions as expressed by the ValueSet.
 * One and only one time for when the intervention was granted
 * The time where the intervention was stopped may be present
 * One and only one reference to the Citizen exists
-* One and only one reference to the ServiceRequest exists
+* A reference to the ServiceRequest may be present
 * A reference to one or more Conditions may exist, but are not required
-* References to completed encounters may exist. They are added as the intervention progresses.
-* One and only one explaination for cancelling the intervention before its completion shall exist if and oly if the status is 'cancelled' or 'stopped'. Else it is prohibited.
-* The timing shall exist for interventions that may be repeating such as 'Madlavning i praksis på hold'. For non-repeating interventions such as 'Afklarende samtale', the timing is prohibited.
+* One and only one reference to the organization that delivers the intervention exists
+* All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet.
+* The reference to the care plan is mandatory if the intervention is repeating such as 'Madlavning i praksis på hold'.
+
+## CarePlan
+The CarePlan is used whenever a prevention/health promotion care pathway is planned for a citizen in Danish municipalities. Care plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
+
+##### Attributes
+* A category code, which can be either 'Opfølgningsforløb efter §119' or 
+'Interventionsforløb efter §119'
+* The time where the CarePlan was granted
+* The time where the CarePlan was stopped
+* A reference to the Citizen
+* An explaination for cancelling the CarePlan before its completion
+* A timing consisting of a count, duration and durationUnit to express the time granted to the intervention e.g. "8 times with a duration of 60min"
+* A reference to the organization that delivers the intervention
+* Three FHIR status attributes (status, intent, activity.detail.status)
+
+##### Validation
+* One and only one category code may be present and it should be drawn from the associated ValueSet.
+* One and only one time for when the care plan was granted
+* The time where the care plan was stopped may be present
+* One and only one reference to the Citizen exists
+* One and only one reference to the ServiceRequest exists
+* One and only one explaination for cancelling the care plan before its completion shall exist if and only if the status is 'cancelled' or 'stopped'. Else it is prohibited.
+* The timing shall exist for interventions, when the category-code is 'Interventionsforløb efter §119'
 * One and only one reference to the organization that delivers the intervention exists
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet
 
@@ -102,6 +123,7 @@ Information about whenever a citizen meets the prevention/health promotion staff
 * The encounter start-time
 * The encounter end-time
 * A reference to the Citizen
+* A reference to the CarePlan that this encounter is a delivery of. 
 * A FHIR status attribute
 
 ##### Validation
@@ -110,6 +132,7 @@ Information about whenever a citizen meets the prevention/health promotion staff
 * One and only one encounter start-time exists
 * One encounter end-time may exist
 * One and only one reference to the Citizen exists
+* A reference to the CarePlan may exist
 * One and only one FHIR status exists, and should be drawn from the standard FHIR-ValueSet
 
 ## Condition

@@ -30,6 +30,11 @@ It is premitted to use the code 'Aktivt fravalg' for reporting, but the more det
 
 CarePlan.subject references the citizen. CarePlan.activity.detail.performer is the organisation that carries out the intervention (leverandør).
 
+Different reasons for changing a CarePlan may exist, and here we provide guidance for how it should be reproted:
+* Errors should be corrected by reporting the same CarePlan again with the entered-in-error status. And reporting the correct one with a new Id.
+* If cancelled, set the CarePlan.activity.detail.status and CarePlan.activity.detail.statusreason and report the Careplan again with the same Id as used earlier.
+* If the timing is changing, it is most likely because a status has shown an new or extra added need of the citizen. Report this in a new CarePlan with a new start-date, rather than correcting the timing in the existing plan. This goes for PlannedInterventions that references the CarePlan as well. 
+
 ### Conversions between Danish information model and FHIR-profile
 
 Nedenstående tabel oversætter mellem de attributter der er defineret i den fælleskommunale informationsmodel (FKI), definerer kort den enkelte attribut på dansk og specificere hvilke af FHIR-profilens atributter der skal bruges til specifikation af indholdet

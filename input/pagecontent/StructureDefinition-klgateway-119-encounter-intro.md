@@ -14,7 +14,7 @@ Encounters may be related to the ServiceRequest (request for prevention/health p
 
 Encounters can also be related to the CarePlan on which they are a delivery. Use Encounter.extension[basedOnCarePlan].
 
-The time of the encounter is documented in Encounter.period.start, and it is mandatory. The endtime is not mandatory.
+The time of the encounter is documented in Encounter.period.start, and it is mandatory. The endtime is not mandatory. All dates may be repported with or without time of day.
 
 Encounter.subject relates to the citizen that the encounter is about.
 
