@@ -11,7 +11,7 @@ This is documented using:
 
 Note that 'Opfølgningsforløb efter §119 sundhedsfremme og forebyggelse' may have a activity.detail.scheduledTiming, but it is not mandatory.
 
-It is important to distiguish correctly between the dates and times stated in the model. CarePlan.period.start is when the CarePlan was authorized (bevillingstid). The planned end-date is CarePlan.period.end, unless the date has already occured and the status is 'completed', then it is the actual end-date. Notice that end-date is not mandatory to report.
+It is important to distiguish correctly between the dates and times stated in the model. CarePlan.period.start is when the CarePlan was authorized (bevillingstid). The planned end-date is CarePlan.period.end, unless the date has already occured and the status is 'completed', then it is the actual end-date. Notice that end-date is not mandatory to report. All dates may be repported with or without time of day.
 
 CarePlan.status and CarePlan.intent are mandatory in the FHIR CarePlan resource. CarePlan.intent is always 'plan' in this implementation guide. CarePlan status should at least distiguish between 'unknown' and 'entered-in-error', but the actual status of the intervention may also be reported. Note that the meaning of 'active' is "ready to be acted upon", so it does not signify that the first activity has occured.
 
