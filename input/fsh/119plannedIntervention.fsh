@@ -109,6 +109,7 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * intent ^short = "[DK] indsatshensigt"
 * activity.detail.status ^short = "[DK] indsatsAktivitetsstatus"
 * obeys klgateway-119-intervention-1
+* obeys klgateway-119-intervention-2
 
 
 Invariant: klgateway-119-intervention-1
@@ -132,6 +133,13 @@ Expression: "(
     or activity.detail.code.coding.code = '1b325914-3a06-437d-9f7e-cd0edbbda32e'
     or activity.detail.code.coding.code = '30836f9d-c84a-4e48-8d5c-21862747466a') implies basedOn.exists()"
  
+Invariant: klgateway-119-intervention-2
+Description: "does not have a reference to careplan if the intervention is a certain type of intervention"
+Severity: #error
+Expression: "(
+       code.coding.code = '03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362'
+    or code.coding.code = 'ee5606ac-1bed-487e-aa3c-72dcc30ec037'
+    or code.coding.code = '6eddbaf7-2a73-49d4-91e7-6138d419f58c') implies basedOn.empty())"
 
 Extension: BasedOnServiceRequestExtension
 Title:     "basedOnServiceRequestExtension"

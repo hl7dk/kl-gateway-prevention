@@ -15,7 +15,7 @@ CarePlan.subject references the citizen. CarePlan.activity.detail.performer is t
 
 CarePlan.activity.detail.reasonReference holds the link between conditions and interventions. It is optional to report.
 
-CarePlan.basedOn referes to the care-pathway or plan, that this intervention is part of. It is mandatory to report for plannend interventions with a treatment focus. See which intervention codes appply in the invariant klgateway-119-intervention-1.
+CarePlan.basedOn referes to the care-pathway or plan, that this intervention is part of. It is mandatory to report for plannend interventions with a treatment focus. See which intervention codes apply in the invariant klgateway-119-intervention-1.
 
 ### Conversions between Danish information model and FHIR-profile
 

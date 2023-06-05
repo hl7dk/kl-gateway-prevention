@@ -1,5 +1,5 @@
 # KLGatewayPrevention
-This implementation guide describes the delivery of §119 prevention/health promotion data to KL Gateway. The data originates from the documantation made by health center employees in the Danish municipalities.The reporting aims for compliance with the Danish core profiles and the current work on a shared information model (FKI) for data in the Danish municipalities.  
+This implementation guide describes the delivery of §119 prevention/health promotion data to KL Gateway. The data originates from the documentation made by health center employees in the Danish municipalities.The reporting aims for compliance with the Danish core profiles and the current work on a shared information model (FKI) for data in the Danish municipalities.  
 
 The profiles for the reporting are restricted to allow only the information that is required to report to the KL Gateway.
 
@@ -108,7 +108,6 @@ The CarePlan is used whenever a prevention/health promotion care pathway is plan
 * One and only one time for when the care plan was granted
 * The time where the care plan was stopped may be present
 * One and only one reference to the Citizen exists
-* One and only one reference to the ServiceRequest exists
 * One and only one explaination for cancelling the care plan before its completion shall exist if and only if the status is 'cancelled' or 'stopped'. Else it is prohibited.
 * The timing shall exist for interventions, when the category-code is 'Interventionsforløb efter §119'
 * One and only one reference to the organization that delivers the intervention exists
@@ -127,7 +126,7 @@ Information about whenever a citizen meets the prevention/health promotion staff
 * A FHIR status attribute
 
 ##### Validation
-* One and only one reference to the ServiceRequest exists
+* One reference to the ServiceRequest may exists
 * One ond only one encounter class exists, and should be drawn from the standard FHIR-ValueSet
 * One and only one encounter start-time exists
 * One encounter end-time may exist
