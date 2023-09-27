@@ -21,9 +21,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * subject only Reference(klgateway-119-citizen)
 * subject ^type.aggregation = #bundled
 * episodeOfCare ..0
-* basedOn ..1
-* basedOn only Reference(klgateway-119-servicerequest)
-* basedOn ^type.aggregation = #bundled
+* basedOn ..0
 * extension contains
    BasedOnCarePlanExtension named basedOnCarePlan 0..1
 * extension[basedOnCarePlan].valueReference ^type.aggregation = #bundled
@@ -31,7 +29,7 @@ Description: "Encounter for first planned visits and all executed activities in 
 * appointment ..0
 * period 1..1
 * period.start 1..1
-* period.end ..1
+* period.end 1..1
 * length ..0
 * reasonCode ..0
 * reasonReference ..0
@@ -48,7 +46,6 @@ Description: "Encounter for first planned visits and all executed activities in 
 * period.start ^short = "[DK] kontaktstart"
 * period.end ^short = "[DK] kontaktslut"
 * subject ^short = "[DK] kontaktsubjekt"
-* basedOn ^short = "[DK] kontaktanledning"
 * extension[basedOnCarePlan] ^short = "[DK] kontaktBaseretPå"
 
 
@@ -56,7 +53,7 @@ Extension: BasedOnCarePlanExtension
 Title:     "basedOnCarePlanExtension"
 Description: "Extension for pointing to the careplan describing why this encounter is taking place, will be part of R5 without needing the extension"
 * value[x] 1..1
-* value[x] only Reference(klgateway-119-care-plan)
+* value[x] only Reference(klgateway-119-care-plan or klgateway-119-planned-intervention)
 * ^context.type = http://hl7.org/fhir/extension-context-type#element
 * ^context.expression = "Encounter"
 
@@ -69,7 +66,8 @@ Usage: #example
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-06-02T12:10:00.000Z
 * subject = Reference(BrunoTestElmer)
-* basedOn = Reference(BrunoRequestInformation)
+* extension[basedOnCarePlan].valueReference = Reference(BrunoAfklarendeSamtale)
+* period.end = 2022-06-02T12:40:00.000Z
 
 Instance: BrunoKontakt1Kost
 InstanceOf: klgateway-119-encounter
@@ -79,5 +77,6 @@ Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * period.start = 2022-06-09T10:00:00.000Z
+* period.end = 2022-06-09T10:30:00.000Z
 * subject = Reference(BrunoTestElmer)
-* basedOn = Reference(BrunoRequestInformation)
+* extension[basedOnCarePlan].valueReference = Reference(BrunoforloebKost)

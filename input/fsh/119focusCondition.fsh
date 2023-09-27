@@ -19,7 +19,6 @@ Description: "Conditions which may be used to express the problem of a citizen i
 * verificationStatus 0..1
 * category 0..0
 * severity 0..0
-* code.text 0..0
 * code.coding.userSelected 0..0
 * code.coding.version 0..0
 * bodySite 0..0
@@ -39,6 +38,7 @@ Description: "Conditions which may be used to express the problem of a citizen i
 //Adding shorts, to make danish descriptions available
 
 * code.coding ^short = "[DK] fokusTilstandskode"
+* code.text ^short = "[DK] fokusTilstandKodetekst"
 * subject ^short = "[DK] fokusTilstandsubjekt"
 * clinicalStatus ^short = "[DK] tilstandsstatus"
 

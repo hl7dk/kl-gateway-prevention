@@ -3,14 +3,6 @@ The CarePlan for §119 is used whenever a prevention/health promotion care pathw
 
 The two types of plan in §119 are 'Intervention efter §119' and 'Opfølgningsforløb efter §119' and one of these two codes should be documented in CarePlan.category.
 
-Both types may be delivered with different repetions and duration.
-This is documented using:
-* activity.detail.scheduledTiming.repeat.count, for the number of encounters planned as part of the care plan
-* activity.detail.scheduledTiming.repeat.duration, for the avarage duration of each encounter
-* activity.detail.scheduledTiming.repeat.durationUnit, which has the mandatory value "min" for minutes, because the duration is messured in minutes.
-
-ScheduledTiming is mandatory for 'Opfølgningsforløb efter §119', but it is optional for 'Opfølgningsforløb efter §119'.
-
 It is important to distiguish correctly between the dates and times stated in the model. CarePlan.period.start is when the CarePlan was authorized (bevillingstid). The planned end-date is CarePlan.period.end, unless the date has already occured and the status is 'completed', then it is the actual end-date. Notice that end-date is not mandatory to report. All dates may be repported with or without time of day.
 
 CarePlan.status and CarePlan.intent are mandatory in the FHIR CarePlan resource. CarePlan.intent is always 'plan' in this implementation guide. CarePlan status should at least distiguish between 'unknown' and 'entered-in-error', but the actual status of the care plan may also be reported. Note that the meaning of 'active' is "ready to be acted upon", so it does not signify that the first activity has occured.
@@ -18,6 +10,7 @@ CarePlan.status and CarePlan.intent are mandatory in the FHIR CarePlan resource.
 CarePlan.activity.detail.status is also mandatory, and all the statuses in the FHIR ValueSet may be used. It is recommended not to use 'entered-in-error' - if the CarePlan is entered-in-error use CarePlan.status. To get the needed data-quality, the detail-status should at least distinguish between 'unknown' and 'cancelled'. Although it is better to use the appropriate FHIR-statuses, 'unknown' is permitted from the time where the care plan occurs in the record until its completion. 'Cancelled' (or 'stopped') are mandatory, if an care plan is cancelled. It is mandatory to report cancelled care plans, so that the reason for the cancellation can inform the dataset. This is done using CarePlan.activity.detail.statusReason, and a set of codes that represents different reasons for the cancellation. The codes are as follows:
 
 * 'Hændelse medfører ophør'
+* 'Borger har ikke henvendt sig eller er udeblevet'
 * 'Ikke yderligere behov (borger-vurderet)'
 * 'Ikke yderligere behov (fagperson-vurderet)' 
 * 'Aktivt fravalg'
@@ -43,9 +36,6 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |   FKI-attribut      | Definition        | FHIR  |
 | ------------- |-------------| -----|
 |indsatsforløbKategori|Udtrykker hvilken kategori indsatsforløbet har.|CarePlan.category|
-|indsatsforløbAntalGange|Antallet af gange der bevilliges i borgerens indsatsforløb|activity.detail.scheduledTiming.repeat.count|
-|indsatsforløbLængdeAfGange|Længden på hver af gangene i indsatsforløbet|activity.detail.scheduledTiming.repeat.duration|
-|indsatsforløbLængdeAfGangeEnhed|Enhed for længde, son altid skal sættes til minutter|activity.detail.scheduledTiming.repeat.durationUnit|
 |indsatsforløbBevillingstid|Tidspunktet for hvornår indsatsforløbet er bevilget|CarePlan.period.start|
 |indsatforløbAfslutningstid|Tidspunktet for hvornår indsatsforløbet er afsluttet, eller planlægges afsluttet|CarePlan.period.end|
 |indsatsforløbsstatus|Indikerer om indsatsforløbet er klar til at blive handlet på, om dokumentationen repræsentere en fremtidig intention eller er historisk.|CarePlan.status|

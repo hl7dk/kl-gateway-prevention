@@ -26,16 +26,16 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * activity.detail.code.coding ^slicing.discriminator.type = #value
 * activity.detail.code.coding ^slicing.discriminator.path = "system"
 * activity.detail.code.coding ^slicing.rules = #closed
-* activity.detail.code.coding contains level2 0..1 and level2temp 0..1 and level3 0..1 MS
+* activity.detail.code.coding contains level2 0..1 and level3 0..1 MS
 * activity.detail.code.coding[level2].system = $FSIII
-* activity.detail.code.coding[level2] from KLInterventionCodes119 //kl-term update Set to 
-* activity.detail.code.coding[level2temp].system = Canonical(Tempcodes)
-* activity.detail.code.coding[level2temp] from KLInterventionCodes119temp
+* activity.detail.code.coding[level2] from KLInterventionCodes119 //kl-term update Set to
 //kl-term update delete two lines above
 * activity.detail.code.coding[level3].system = "http://gateway.kl.dk/1.0/CodeSystem/LocallyDefinedInterventions"
 * activity.detail.code.coding[level3].code 1..1
 * activity.detail.code.coding[level3].display 1..1
 * activity.detail.code.coding[level3] ^definition = "Shall contain locally defined code if it is a locally defined level 3 intervention"
+* activity.detail.extension contains DeliveryType named deliveryType 1..1
+* activity.detail.extension[deliveryType].valueCodeableConcept.coding from DeliveryTypes119 (required)
 * activity.detail.reasonCode ..0
 * activity.detail.scheduled[x] 0..0
 * activity.detail.performer 1..1 //indsatsudfører
@@ -73,7 +73,6 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * activity.detail.kind ..0
 * activity.detail.instantiatesCanonical ..0
 * activity.detail.instantiatesUri ..0
-* activity.detail.reasonReference 0..1
 * activity.detail.goal ..0
 * activity.detail.doNotPerform ..0
 // * activity.detail.scheduledString ..0
@@ -111,35 +110,28 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * obeys klgateway-119-intervention-1
 * obeys klgateway-119-intervention-2
 
-
 Invariant: klgateway-119-intervention-1
 Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
 Severity: #error
-Expression: "(
-       activity.detail.code.coding.code = 'e78c43e3-c512-44b4-ad30-2de43481d9b3'
-    or activity.detail.code.coding.code = 'f490d484-fa43-400b-b678-e718c6927708'
-    or activity.detail.code.coding.code = 'abade2c3-0922-4ec1-b85a-263c85d056fa'
-    or activity.detail.code.coding.code = '122fe9a2-9bff-4c9c-87df-af1e096ad7a6'
-    or activity.detail.code.coding.code = '9143b4b7-7211-45ed-8892-9afb1f2d20b7'
-    or activity.detail.code.coding.code = 'e31355bd-b1a6-4fab-a339-8cec309cad81'
-    or activity.detail.code.coding.code = 'fea40bf1-731f-4d7e-a1d0-38555a553cb7'
-    or activity.detail.code.coding.code = '37d2b78b-4988-4225-afa0-a9642402df38'
-    or activity.detail.code.coding.code = 'eac36593-ad34-4abe-9de0-c408fe7eb3e5'
-    or activity.detail.code.coding.code = '051978fc-599e-4e30-9746-d6d0547a0361'
-    or activity.detail.code.coding.code = 'fe0588d3-d12b-455f-b84c-1fee3c85bfd8'
-    or activity.detail.code.coding.code = 'd83d524f-a01b-4fa0-9324-3bb56c1e79fe'
-    or activity.detail.code.coding.code = 'a616e57f-c780-442e-8c29-b22a72fbe88c'
-    or activity.detail.code.coding.code = 'a05f0199-6b1f-419f-800c-f6348f93751e'
-    or activity.detail.code.coding.code = '1b325914-3a06-437d-9f7e-cd0edbbda32e'
-    or activity.detail.code.coding.code = '30836f9d-c84a-4e48-8d5c-21862747466a') implies basedOn.exists()"
- 
+Expression: "activity.detail.code.coding.code = 'f30cab6d-2a42-4358-99d7-811127fb6e05'
+    or activity.detail.code.coding.code = 'e71b7d85-5c78-49c2-8624-8499d162317b'
+    or activity.detail.code.coding.code = '01a500f6-c221-4fd0-b518-cd361218b60d'
+    or activity.detail.code.coding.code = 'c203c6b5-3be0-40a8-8204-e93751deabf5'
+    or activity.detail.code.coding.code = 'c9a99304-1788-43b7-b7be-e187b092ae9c'
+    or activity.detail.code.coding.code = 'ab87c0b5-40be-4e0a-b749-d9f833bfed2d'
+    or activity.detail.code.coding.code = '61692d91-69b8-4830-9453-3d58454e49d3'
+    or activity.detail.code.coding.code = 'abe847e0-1ce0-44dc-a675-ce05b66f47e6'
+    or activity.detail.code.coding.code = 'd1e016b5-150a-4ac4-97ba-d3e19e28471e'
+    or activity.detail.code.coding.code = 'cf7a55c2-7061-47ed-b7c5-e29620fe93bf'
+    or activity.detail.code.coding.code = '924e9828-84cf-4689-9551-0ebb6dc71b98' implies basedOn.exists()"
+
+
 Invariant: klgateway-119-intervention-2
 Description: "does not have a reference to careplan if the intervention is a certain type of intervention"
 Severity: #error
-Expression: "(
-       code.coding.code = '03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362'
+Expression: "code.coding.code = '03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362'
     or code.coding.code = 'ee5606ac-1bed-487e-aa3c-72dcc30ec037'
-    or code.coding.code = '6eddbaf7-2a73-49d4-91e7-6138d419f58c') implies basedOn.empty())"
+    or code.coding.code = '6eddbaf7-2a73-49d4-91e7-6138d419f58c' implies basedOn.empty())"
 
 Extension: BasedOnServiceRequestExtension
 Title:     "basedOnServiceRequestExtension"
@@ -149,6 +141,13 @@ Description: "Extension for pointing to the servicerequest, that started an inte
 * ^context.type = http://hl7.org/fhir/extension-context-type#element
 * ^context.expression = "CarePlan"
 
+Extension: DeliveryType
+Title: "DeliveryType"
+Description: "Extension for a code that specifies some context of how a treatment-activity is delivered to a patient"
+* value[x] only CodeableConcept
+* ^context.type = http://hl7.org/fhir/extension-context-type#element
+* ^context.expression = "CarePlan.activity.detail"
+
 
 Instance: BrunoAfklarendeSamtale
 InstanceOf: klgateway-119-planned-intervention
@@ -156,6 +155,7 @@ Title: "BrunoAfklarendeSamtale"
 Description: "Bruno's afklarende Samtale"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c //Afklarende samtale
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
 * period.start = 2022-05-31
 * period.end = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -170,9 +170,9 @@ InstanceOf: klgateway-119-planned-intervention
 Title: "BrunoKostvejledning"
 Description: "Bruno's Kostvejledning"
 Usage: #example
-* activity.detail.code.coding[level2temp] = Tempcodes#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
-// * activity.detail.code.coding[level2temp] = $FSIII#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
-// kl-term update change Tempcode to $FSIII
+* activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
@@ -187,9 +187,8 @@ InstanceOf: klgateway-119-planned-intervention
 Title: "BrunoKostvejledningValidationError"
 Description: "BrunoKostvejledningValidationError"
 Usage: #example
-* activity.detail.code.coding[level2temp] = Tempcodes#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
-// * activity.detail.code.coding[level2temp] = $FSIII#37d2b78b-4988-4225-afa0-a9642402df38 "Kostvejledning individuelt"
-// kl-term update change Tempcode to $FSIII
+* activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan

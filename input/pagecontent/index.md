@@ -56,11 +56,13 @@ This model holds a diagnosiscode, as it is reported to the municipality as part 
 
 ##### Attributes
 * A diagnosis code
+* A diagnosis text
 * A reference to the citizen
 * Two FHIR status attributes
 
 ##### Validation
-* One and only one diagnosis code exists and should be drawn from SKS or ICPC2
+* One diagnosis code may exists and should be drawn from SKS or ICPC2
+* One diagnosis text may exist
 * One and only one reference to the citizen exists
 * One FHIR status is mandatory and should be drawn from the appropriate standard FHIR-ValueSet. The other not mandatory, but it is needed for reporting entered-in-error.
 
