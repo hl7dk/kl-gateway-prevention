@@ -5,15 +5,14 @@ Title: "KLGateway119Citizen"
 Description: "Administrative information about a citizen receiving care or care related services."
 * identifier 1..1
 * identifier only dk-core-cpr-identifier
-* deceasedBoolean 1..1
 * deceasedDateTime 0..0
+* deceasedBoolean 1..1
 * active ..0
 * name[official] 0..0
 * name ..0
 * telecom ..0
 * gender ..0
 * birthDate ..0
-* deceasedDateTime 0..0
 * address ..0
 * maritalStatus ..0
 * multipleBirth[x] ..0
