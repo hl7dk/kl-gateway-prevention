@@ -2,7 +2,7 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: kl.fhir.dk.prevention
+id: kl.dk.fhir.prevention
 canonical: http://fhir.kl.dk/prevention
 name: KLGatewayPrevention
 status: active
