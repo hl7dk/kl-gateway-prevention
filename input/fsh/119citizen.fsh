@@ -6,6 +6,7 @@ Description: "Administrative information about a citizen receiving care or care 
 * identifier 1..1
 * identifier only dk-core-cpr-identifier
 * deceasedBoolean 1..1
+* deceasedDateTime 0..0
 * active ..0
 * name[official] 0..0
 * name ..0
