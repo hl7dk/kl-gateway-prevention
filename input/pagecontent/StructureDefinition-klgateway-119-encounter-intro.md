@@ -10,11 +10,9 @@ Encounter.class is mandatory in FHIR. In Danish municipalities, the values are u
 * Sessions where the citizens visit municipality facilities e.g. for training og cooking class have the code "AMB" ambulatory.
 * For telehealth/telecare encounters, where the patient is contacted by telephone, by teleconference or e-mail, the code is 'VR' virtual.
 
-Encounters may be related to the ServiceRequest (request for prevention/health promotion according to §119 in the health act), so that it may be tracked which request resulted in what activities. Use Encounter.basedOn.
+Encounters can also be related to the CarePlan or PlannedIntervention on which they are a delivery. Use Encounter.extension[basedOnCarePlan].
 
-Encounters can also be related to the CarePlan on which they are a delivery. Use Encounter.extension[basedOnCarePlan].
-
-The time of the encounter is documented in Encounter.period.start, and it is mandatory. The endtime is not mandatory. All dates may be repported with or without time of day.
+The time of the encounter is documented in Encounter.period.start and Encounter.periode.end, and both attributes are mandatory. Only planned time is mandatory to report. There is no expectation that the staff update the time if they finish a little earlier or a little later.
 
 Encounter.subject relates to the citizen that the encounter is about.
 
@@ -30,5 +28,4 @@ Nedenstående tabel oversætter mellem de attributter der er defineret i den fæ
 |borgerkontaktstart|Kontaktens start, eller planlagte start|Encounter.period.start|
 |borgerkontaktslut|Kontaktens sluttidspunkt, eller planlagte sluttidspunkt|Encounter.period.end|
 |borgerkontaktsubjekt|Den borger kontakten vedrører|Encounter.subject|
-|borgerkontaktanledning|Den henvisning/henvendelse, der er grunden til at denne kontakt udføres|Encounter.basedOn|
-|borgerkontaktBaseretPå|Det indsatsforløb, der er grunden til at denne kontakt udføres|extension[basedOnCarePlan]|
+|borgerkontaktBaseretPå|Det indsatsforløb eller indsats, der er grunden til at denne kontakt udføres|Encounter.extension:basedOnCarePlan|

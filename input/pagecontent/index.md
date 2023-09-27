@@ -15,10 +15,12 @@ Information about the citizen that is the subjects of the report.
 
 ##### Attributes
 * A civil registration number (CPR-nr)
+* A deseased attribute signifying whether the patient is alive or dead
 * An organisation identifier that identifies the municipality holding and reporting the data
 
 ##### Validation
 * One and only one civil registration number exists, and is a syntactically valid CPR-nr
+* One and only one deseased attribute
 * One and only one managing organization exitis, and is a syntactically valid SOR code (only code length is currently validated in the profile, but the authorization validates the actual SOR code)
 
 ## Organization
@@ -71,6 +73,7 @@ This model holds information about prevention/health promotion interventions pla
 
 ##### Attributes
 * A FSIII intervention code
+* A delivery type code that express whether the intervention is delivered in a group or individually
 * The time where the intervention was granted
 * The time where the intervention was stopped
 * A reference to the Citizen
@@ -81,7 +84,8 @@ This model holds information about prevention/health promotion interventions pla
 * A reference to the care plan that this planned intervention is part of
 
 ##### Validation
-* One and only one FSIII intervention code may be present and it should be drawn from valid §119 FSIII interventions as expressed by the ValueSet.
+* One and only one FSIII intervention code may be present and it should be drawn from valid §119 FSIII interventions as expressed by the ValueSet
+* One and only one delivery type code, which should be drawn from the appropriate ValueSet 
 * One and only one time for when the intervention was granted
 * The time where the intervention was stopped may be present
 * One and only one reference to the Citizen exists
@@ -89,19 +93,19 @@ This model holds information about prevention/health promotion interventions pla
 * A reference to one or more Conditions may exist, but are not required
 * One and only one reference to the organization that delivers the intervention exists
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet.
-* The reference to the care plan is mandatory if the intervention is repeating such as 'Madlavning i praksis på hold'.
+* The reference to the care plan is mandatory if the intervention is repeating such as 'Madlavning i praksis'.
 
 ## CarePlan
 The CarePlan is used whenever a prevention/health promotion care pathway is planned for a citizen in Danish municipalities. Care plan is a way to describe when a number of planned interventions are delivered together with a common schedule.
 
 ##### Attributes
+* A reference to the ServiceRequest, that started the CarePlan
 * A category code, which can be either 'Opfølgningsforløb efter §119' or 
 'Interventionsforløb efter §119'
 * The time where the CarePlan was granted
 * The time where the CarePlan was stopped
 * A reference to the Citizen
 * An explaination for cancelling the CarePlan before its completion
-* A timing consisting of a count, duration and durationUnit to express the time granted to the intervention e.g. "8 times with a duration of 60min"
 * A reference to the organization that delivers the intervention
 * Three FHIR status attributes (status, intent, activity.detail.status)
 
@@ -111,7 +115,7 @@ The CarePlan is used whenever a prevention/health promotion care pathway is plan
 * The time where the care plan was stopped may be present
 * One and only one reference to the Citizen exists
 * One and only one explaination for cancelling the care plan before its completion shall exist if and only if the status is 'cancelled' or 'stopped'. Else it is prohibited.
-* The timing shall exist for interventions, when the category-code is 'Interventionsforløb efter §119'
+* A reference to the ServiceRequest that started the CarePlan is optional
 * One and only one reference to the organization that delivers the intervention exists
 * All FHIR statuses are mandatory. Each of them should be drawn from the appropriate standard FHIR-ValueSet
 
@@ -119,21 +123,19 @@ The CarePlan is used whenever a prevention/health promotion care pathway is plan
 Information about whenever a citizen meets the prevention/health promotion staff in a Danish municipality context.
 
 ##### Attributes
-* A reference to the ServiceRequest
 * Encounter class. The attriute holds a code which describe the place of delivery e.g. home visit or ambulatory.
 * The encounter start-time
 * The encounter end-time
 * A reference to the Citizen
-* A reference to the CarePlan that this encounter is a delivery of. 
+* A reference to the CarePlan or PlannedIntervention that this encounter is a delivery of
 * A FHIR status attribute
 
 ##### Validation
-* One reference to the ServiceRequest may exists
 * One ond only one encounter class exists, and should be drawn from the standard FHIR-ValueSet
 * One and only one encounter start-time exists
-* One encounter end-time may exist
+* One and only one end-time may exist
 * One and only one reference to the Citizen exists
-* A reference to the CarePlan may exist
+* A reference to the CarePlan or PlannedIntervention may exist
 * One and only one FHIR status exists, and should be drawn from the standard FHIR-ValueSet
 
 ## Condition

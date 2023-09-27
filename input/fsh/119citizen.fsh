@@ -5,13 +5,14 @@ Title: "KLGateway119Citizen"
 Description: "Administrative information about a citizen receiving care or care related services."
 * identifier 1..1
 * identifier only dk-core-cpr-identifier
+* deceasedBoolean 1..1
 * active ..0
 * name[official] 0..0
 * name ..0
 * telecom ..0
 * gender ..0
 * birthDate ..0
-* deceased[x] ..0
+* deceasedDateTime 0..0
 * address ..0
 * maritalStatus ..0
 * multipleBirth[x] ..0
@@ -29,8 +30,9 @@ Description: "Administrative information about a citizen receiving care or care 
 * link ..0
 
 //Danish descriptions
-* identifier ^short = "[DK] borgers cpr-nummer"
-* managingOrganization ^short = "[DK] journalførende organisation"
+* identifier ^short = "[DK] borgerCprNummer"
+* deceasedBoolean ^short = "[DK] borgerErDød"
+* managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"
 
 Instance: BrunoTestElmer
 InstanceOf: klgateway-119-citizen
@@ -42,3 +44,4 @@ Usage: #example
 * managingOrganization.identifier.use = #official
 * managingOrganization.identifier.value =  "451000016003"
 * managingOrganization.identifier.system = "urn:oid:1.2.208.176.1.1"
+* deceasedBoolean = false
