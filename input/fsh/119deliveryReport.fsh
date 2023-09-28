@@ -37,16 +37,16 @@ Description: "Delivery report to deliver data for each citizen."
 Invariant: gateway-119-report-1
 Description: "All condition resources shall conform to either klgateway-119-condition profile, or klgateway-119--focus-condition profile"
 Severity: #error
-Expression: "entry.ofType(Condition).all(
-    resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-119-condition')
- or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-119-focus-condition'))"
+Expression: "entry.select(resource as Condition).all(
+    $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-condition')
+ or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-focus-condition'))"
 
 Invariant: gateway-119-report-2
-Description: "All condition resources shall conform to either klgateway-119-condition profile, or klgateway-119--focus-condition profile"
+Description: "All CarePlan resources shall conform to either klgateway-119-careplan profile, or klgateway-119-planned-intervention profile"
 Severity: #error
-Expression: "entry.ofType(CarePlan).all(
-    resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-119-care-plan')
- or resource.conformsTo('http://fhir.kl.dk/rehab/StructureDefinition/klgateway-119-planned-intervention'))"
+Expression: "entry.select(resource as CarePlan).all(
+    $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-care-plan')
+ or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-planned-intervention'))"
 
 // Invariant: gateway-119-report-3
 // Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan with category-code 'interventionsforløb §119'."

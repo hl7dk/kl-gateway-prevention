@@ -129,9 +129,9 @@ Expression: "activity.detail.code.coding.code = 'f30cab6d-2a42-4358-99d7-811127f
 Invariant: klgateway-119-intervention-2
 Description: "does not have a reference to careplan if the intervention is a certain type of intervention"
 Severity: #error
-Expression: "code.coding.code = '03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362'
-    or code.coding.code = 'ee5606ac-1bed-487e-aa3c-72dcc30ec037'
-    or code.coding.code = '6eddbaf7-2a73-49d4-91e7-6138d419f58c' implies basedOn.empty())"
+Expression: "activity.detail.code.coding.code = '03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362'
+    or activity.detail.code.coding.code = 'ee5606ac-1bed-487e-aa3c-72dcc30ec037'
+    or activity.detail.code.coding.code = '6eddbaf7-2a73-49d4-91e7-6138d419f58c' implies basedOn.empty()"
 
 Extension: BasedOnServiceRequestExtension
 Title:     "basedOnServiceRequestExtension"
