@@ -5,6 +5,7 @@
 id: kl.dk.fhir.prevention
 canonical: http://fhir.kl.dk/prevention
 name: KLGatewayPrevention
+description: Danish municipalities implementation guide for reporting §119 disease prevention and health promotion
 status: active
 version: 1.0.0
 fhirVersion: 4.0.1
