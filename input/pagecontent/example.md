@@ -70,7 +70,7 @@ The report for this is found here: [DeliveryReport-Bruno-7](Bundle-88889c22-b86d
 
 #### Eighth event September 30th 2022
 
-### Story
+#### Story
 Ved sin afslutningssamtale får Bruno afsluttet sin tilstand 'sundhedskompetence' og indsats 'Sygdomshåndtering', som er gået rigtig godt. Holbæk kommune har fokus på systematisk opfølgning. Det betyder, at der oprettes et opfølgningsforløb til Bruno i forbindelse med afslutningen.
 
 #### Reporting
