@@ -22,7 +22,7 @@ A delivery report is generated containing the Citizen and an Organization (the o
 
 The delivery report also contains the updated PlannedIntervention (Afklarende samtale).
 
-The new content in the delivery report is an Enconter (Afklarende samtale), a Condition, a CarePlan (§119 forbyggelsesforløb) and a PlannedIntervetion (Madlavning i praksis).
+The new content in the delivery report is an Enconter (Afklarende samtale), a Condition (ernæring), a CarePlan (§119 forbyggelsesforløb) and a PlannedIntervetion (Madlavning i praksis).
 
 The report for this is found here: [DeliveryReport-Bruno-2](Bundle-8c3f35d7-7437-4fcf-90d2-49e04701d0ec.html)
 
@@ -32,9 +32,11 @@ Bruno har første gang på holdet 'Madlavning i praksis' d. 15. juni, og møder 
 De tre rapporter vil være næsten ens, og derfor er det udelukkende rapporten fra 29. juni, der vises her. Læg mærke til at rapporten ikke indeholder tidligere indberettede kontakter - det er fordi de hverken ændrer sig eller refereres.
 
 #### Reporting
-The delivery report contains ..... 
+The delivery report contains a Citizen, an Organization (the one delivering the intervention) and a CarePlan (§119 forebyggelsesforløbet). These are not updated from last time, but they are reported because the new content references these instances.
 
-The report for this is found here: [DeliveryReport-Bruno-5](Bundle-xxx.html)
+The new content in the delivery report is an Encounter (kontakt på indsatsforløbet der omhandler madlavning i praksis)
+
+The report for this is found here: [DeliveryReport-Bruno-5](Bundle-5135080e-fbaf-4575-afe6-f037d4541e06.html)
 
 ### Sixth event July 4th
 #### Story
@@ -43,16 +45,41 @@ Bruno bliver indlagt d. 1.-3. juli pga. en forværring i sin KOL. D. 4. juli sen
 (d. 6. juli er der igen en kontakt på 'Madlavning i praksis'. Rapporten dog ikke er medtaget her, fordi den ligner foregående)
 
 #### Reporting
+The delivery report contains a Citizen, and an Organization (the one delivering the intervention). These are not updated from last time, but they are reported because the new content references these instances.
 
+The new content in the delivery report is an Organization (Medicinsk observationsafdeling, Holbæk sygehus), FocusCondition (KOL), ServiceRequest (henvisning til 119-forløb) og PlannedIntervention (behovssamtale).
+
+The report for this is found here: [DeliveryReport-Bruno-6](Bundle-974cabc7-d2e0-4db0-bfa4-6cd5af7103de.html)
 
 ### Seventh event July 9th
 
 #### Story
-Bruno er til behovssamtale. Bruno og den sundhedsprofessionelle bliver enige om, at Bruno bør styrke sin tilstand 'Sundhedskompetence' ved at indgå i et hold med fokus på KOL dvs. indsatsen 'Sygdomshåndtering'. Denne indsats skal køre parallelt med at Bruno gør sit forløb vedr. 'Madlavning i praksis' færdig, som han er blevet meget glad for.
+Bruno er til behovssamtale. Bruno og den sundhedsprofessionelle bliver enige om, at Bruno bør styrke sin tilstand 'Sundhedskompetencer' ved at indgå i et hold med fokus på KOL dvs. indsatsen 'Sygdomshåndtering'. Denne indsats skal køre parallelt med at Bruno gør sit forløb vedr. 'Madlavning i praksis' færdig, som han er blevet meget glad for.
 
 (herefter rapporteres en række kontakter på de to forløb, og Madlavning i praksis og ernærings-tilstanden afsluttes. Dette er ikke er med i eksemplet)
+
+#### Reporting
+The delivery report contains a Citizen, and an Organization (the one delivering the intervention). These are not updated from last time, but they are reported because the new content references these instances.
+
+Updated content is the PlannedIntervention (Behovssamtale), it is changed because it is completed.
+
+The new content in the delivery report is an Encounter (behovssamtale kontakt), Condition (sundhedskompetencer), CarePlan (nyt 119 indsatsforløb), PlannedIntervention (Sygdomshåndtering).
+
+The report for this is found here: [DeliveryReport-Bruno-7](Bundle-88889c22-b86d-4ceb-81d8-38a158f12bf4.html)
+
 
 #### Eighth event September 30th 2022
 
 ### Story
-Bruno får afsluttet sin tilstand 'sundhedskompetence' og indsats 'Sygdomshåndtering', som er gået rigtig godt. Holbæk kommune har fokus på systematisk opfølgning. Det betyder, at der oprettes et opfølgningsforløb til Bruno i forbindelse med afslutningen.
+Ved sin afslutningssamtale får Bruno afsluttet sin tilstand 'sundhedskompetence' og indsats 'Sygdomshåndtering', som er gået rigtig godt. Holbæk kommune har fokus på systematisk opfølgning. Det betyder, at der oprettes et opfølgningsforløb til Bruno i forbindelse med afslutningen.
+
+#### Reporting
+The delivery report contains a Citizen, and an Organization (the one delivering the intervention). These are not updated from last time, but they are reported because the new content references these instances.
+
+The updated content in this delivery report is a CarePlan (§119 indsatsforløbet) and a PlannedIntervention (Madlavning i praksis) which are completed. In addition a Condition (Sundhedskopmpetencer) is ended.
+
+The new content is a PlannedIntervention (afsluttende samtale) and its Encounter (afsluttende samtale kontakten), a CarePlan (Opfølgningsforløb) and its PlannedIntervention (opfølgning). 
+
+The report for this is found here: [DeliveryReport-Bruno-8](Bundle-738ec570-6bb6-4690-9a88-1dbed46d65ed.html)
+
+
