@@ -421,7 +421,7 @@ Usage: #example
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/1e4333ec-315c-4e98-b009-fcb77b8e8103" //Brunos indsats: Madlavning i praksis afsluttes
 * entry[=].resource = 1e4333ec-315c-4e98-b009-fcb77b8e8103-v2
 
-* entry[+].fullUrl = "CarePlan/e91f631d-6f99-4eb9-9f07-dce1d4f4e54f" //Brunos indsats: Afsluttende samtale
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/e91f631d-6f99-4eb9-9f07-dce1d4f4e54f" //Brunos indsats: Afsluttende samtale
 * entry[=].resource = e91f631d-6f99-4eb9-9f07-dce1d4f4e54f
 
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Enconter/d7646272-58a4-4bfc-a434-b89d4c826cf9" //Brunos kontakt på afsluttende samtale
