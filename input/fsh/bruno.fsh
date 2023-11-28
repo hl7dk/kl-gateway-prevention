@@ -245,7 +245,7 @@ Usage: #example
 * entry[=].resource = 21ade6b2-d9a1-4564-bd91-b841bbae7ccc
 
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/ServiceRequest/4fb11af4-d0e3-4a28-8a6b-375c35629a58" //anmodning om sygdomsmestring fra kommunen
-* entry[=].resource = 3050d118-89a5-4bf4-85b9-a094e3277de4
+* entry[=].resource = 4fb11af4-d0e3-4a28-8a6b-375c35629a58
 
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //Som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
@@ -465,7 +465,7 @@ InstanceOf: klgateway-119-planned-intervention
 Title: "BrunoSygdomshåndtering"
 Description: "Brunos indsats vedr. Sygdomshåndtering afsluttes"
 Usage: #inline
-* id = "22695613-b50d-445d-aeb9-81937e3f3e47"
+* id = "1e4333ec-315c-4e98-b009-fcb77b8e8103"
 * activity.detail.code.coding[level2] = $FSIII#e71b7d85-5c78-49c2-8624-8499d162317b "Sygdomshåndtering"
 * activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
 * period.start = 2022-07-09
