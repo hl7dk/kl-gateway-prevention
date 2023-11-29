@@ -83,7 +83,7 @@ Title: "BrunoAfklarendeSamtale"
 Description: "Bruno's afklarende Samtale"
 Usage: #inline
 * activity.detail.code.coding[level2] = $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c //Afklarende samtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
@@ -130,7 +130,7 @@ Description: "Bruno's afklarende samtale afsluttes"
 Usage: #inline
 * id = "7c45824a-9b19-4674-b4a7-c75c674bbb2e"
 * activity.detail.code.coding[level2] = $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c //Afklarende samtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-06-02
 * period.end = 2022-06-10
 * status = http://hl7.org/fhir/request-status#completed
@@ -291,7 +291,7 @@ Title: "BrunoBehovssamtale"
 Description: "Bruno's indsats vedr. behovssamtale"
 Usage: #inline
 * activity.detail.code.coding[level2] = $FSIII#ee5606ac-1bed-487e-aa3c-72dcc30ec037 //Behovssamtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-07-04
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
@@ -335,7 +335,7 @@ Description: "Bruno's behovssamtale afsluttes"
 Usage: #inline
 * id = "364ae8f2-75b4-43a0-8010-e79ba38f7990"
 * activity.detail.code.coding[level2] = $FSIII#ee5606ac-1bed-487e-aa3c-72dcc30ec037 //Behovssamtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-07-04
 * period.end = 2022-07-09
 * status = http://hl7.org/fhir/request-status#completed

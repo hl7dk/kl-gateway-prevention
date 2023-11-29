@@ -155,7 +155,7 @@ Title: "BrunoAfklarendeSamtale"
 Description: "Bruno's afklarende Samtale"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c //Afklarende samtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-05-31
 * period.end = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -171,7 +171,7 @@ Title: "BrunoKostvejledning"
 Description: "Bruno's Kostvejledning"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -188,7 +188,7 @@ Title: "BrunoKostvejledningValidationError"
 Description: "BrunoKostvejledningValidationError"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan
