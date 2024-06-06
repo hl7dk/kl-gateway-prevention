@@ -54,7 +54,7 @@ The report for this is found here: [DeliveryReport-Bruno-6](Bundle-974cabc7-d2e0
 ### Seventh event July 9th
 
 #### Story
-Bruno er til behovssamtale. Bruno og den sundhedsprofessionelle bliver enige om, at Bruno bør styrke sin tilstand 'Sundhedskompetencer' ved at indgå i et hold med fokus på KOL dvs. indsatsen 'Sygdomshåndtering'. Denne indsats skal køre parallelt med at Bruno gør sit forløb vedr. 'Madlavning i praksis' færdig, som han er blevet meget glad for.
+Bruno er til behovssamtale. Bruno og den sundhedsprofessionelle bliver enige om, at Bruno bør styrke sin tilstand 'Sundhedskompetence' ved at indgå i et hold med fokus på KOL dvs. indsatsen 'Sygdomshåndtering'. Denne indsats skal køre parallelt med at Bruno gør sit forløb vedr. 'Madlavning i praksis' færdig, som han er blevet meget glad for.
 
 (herefter rapporteres en række kontakter på de to forløb, og Madlavning i praksis og ernærings-tilstanden afsluttes. Dette er ikke er med i eksemplet)
 
@@ -63,7 +63,7 @@ The delivery report contains a Citizen, and an Organization (the one delivering 
 
 Updated content is the PlannedIntervention (Behovssamtale), it is changed because it is completed.
 
-The new content in the delivery report is an Encounter (behovssamtale kontakt), Condition (sundhedskompetencer), CarePlan (nyt 119 indsatsforløb), PlannedIntervention (Sygdomshåndtering).
+The new content in the delivery report is an Encounter (behovssamtale kontakt), Condition (Sundhedskompetence), CarePlan (nyt 119 indsatsforløb), PlannedIntervention (Sygdomshåndtering).
 
 The report for this is found here: [DeliveryReport-Bruno-7](Bundle-88889c22-b86d-4ceb-81d8-38a158f12bf4.html)
 
@@ -71,7 +71,7 @@ The report for this is found here: [DeliveryReport-Bruno-7](Bundle-88889c22-b86d
 #### Eighth event September 30th 2022
 
 #### Story
-Ved sin afslutningssamtale får Bruno afsluttet sin tilstand 'sundhedskompetence' og indsats 'Sygdomshåndtering', som er gået rigtig godt. Holbæk kommune har fokus på systematisk opfølgning. Det betyder, at der oprettes et opfølgningsforløb til Bruno i forbindelse med afslutningen.
+Ved sin afslutningssamtale får Bruno afsluttet sin tilstand 'Sundhedskompetence' og indsats 'Sygdomshåndtering', som er gået rigtig godt. Holbæk kommune har fokus på systematisk opfølgning. Det betyder, at der oprettes et opfølgningsforløb til Bruno i forbindelse med afslutningen.
 
 #### Reporting
 The delivery report contains a Citizen, and an Organization (the one delivering the intervention). These are not updated from last time, but they are reported because the new content references these instances.

@@ -111,7 +111,7 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * obeys klgateway-119-intervention-2
 
 Invariant: klgateway-119-intervention-1
-Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
+Description: "Planned interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
 Severity: #error
 Expression: "activity.detail.code.coding.code = 'f30cab6d-2a42-4358-99d7-811127fb6e05'
     or activity.detail.code.coding.code = 'e71b7d85-5c78-49c2-8624-8499d162317b'

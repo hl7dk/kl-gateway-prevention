@@ -41,10 +41,18 @@ Description: "The service types allowed in §119"
 ValueSet: KLInterventionCodes119
 Id: KLInterventionCodes119
 Title: "KLInterventionCodes119"
-Description: "Intervention codes allowed in this implementation guide. Notice that codes are excluded to pinpoint that information about group/individual treatment must be included for some interventions"
+Description: "Intervention codes allowed in this implementation guide. Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
 * ^experimental = false
 * include codes from valueset http://fhir.kl.dk/term/ValueSet/KLPreventionInterventionsFSIII
+* exclude $FSIII#c203c6b5-3be0-40a8-8204-e93751deabf5
 
+ValueSet: KLConditionCodes119
+Id: KLConditionCodes119
+Title: "KLConditionCodes119"
+Description: "Condition codes allowed in this implementation guide. . Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
+* ^experimental = false
+* include codes from valueset $KLConditionCodes119
+* exclude $FSIII#525b5dd8-d62b-4efa-bf66-262ac47eca5b
 
 ValueSet: CarePlanCategories119
 Id: CarePlanCategories119

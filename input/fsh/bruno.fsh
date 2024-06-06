@@ -319,7 +319,7 @@ Usage: #example
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/6daa6b0e-b89a-4b4a-b057-ec02316a05be" //Behovssamtales kontakt
 * entry[=].resource = 6daa6b0e-b89a-4b4a-b057-ec02316a05be
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetencer
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence
 * entry[=].resource = b7b532ca-561f-4138-b94b-0285902dbc24
 
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb
@@ -363,7 +363,7 @@ InstanceOf: klgateway-119-condition
 Title: "BrunoTilstandSundhedskompetence"
 Description: "Brunos Tilstand vedrørende sundhedskompetence"
 Usage: #inline
-* code.coding =  $FSIII#bb7e9e71-73f6-4ec6-a0bf-eaec1e5982b4 "Sundhedskompetencer"
+* code.coding =  $FSIII#bb7e9e71-73f6-4ec6-a0bf-eaec1e5982b4 "Sundhedskompetence"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = 2022-07-09
@@ -412,7 +412,7 @@ Usage: #example
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetencer afsluttes
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence afsluttes
 * entry[=].resource = b7b532ca-561f-4138-b94b-0285902dbc24-v2
 
 * entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb afsluttes
@@ -439,7 +439,7 @@ Title: "BrunoTilstandSundhedskompetence"
 Description: "Brunos Tilstand vedrørende sundhedskompetence afsluttes"
 Usage: #inline
 * id = "b7b532ca-561f-4138-b94b-0285902dbc24"
-* code.coding =  $FSIII#bb7e9e71-73f6-4ec6-a0bf-eaec1e5982b4 "Sundhedskompetencer"
+* code.coding =  $FSIII#bb7e9e71-73f6-4ec6-a0bf-eaec1e5982b4 "Sundhedskompetence"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#inactive
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = 2022-07-09

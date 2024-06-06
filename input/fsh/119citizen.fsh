@@ -4,10 +4,12 @@ Id: klgateway-119-citizen
 Title: "KLGateway119Citizen"
 Description: "Administrative information about a citizen receiving care or care related services."
 * identifier 1..1
-* identifier only dk-core-cpr-identifier
+* identifier[x-ecpr] 0..0
+* identifier[d-ecpr] 0..0
+* identifier[cpr] 1..1
 * deceasedDateTime 0..0
 * deceasedBoolean 1..1
-* active ..0
+* active ..1
 * name[official] 0..0
 * name ..0
 * telecom ..0
@@ -33,6 +35,7 @@ Description: "Administrative information about a citizen receiving care or care 
 * identifier ^short = "[DK] borgerCprNummer"
 * deceasedBoolean ^short = "[DK] borgerErDød"
 * managingOrganization ^short = "[DK] borgerJournalførendeOrganisation"
+* active ^short = "[DK] harAktivJournal"
 
 Instance: BrunoTestElmer
 InstanceOf: klgateway-119-citizen
