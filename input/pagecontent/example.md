@@ -27,7 +27,7 @@ The new content in the delivery report is an Enconter (Afklarende samtale), a Co
 The report for this is found here: [DeliveryReport-Bruno-2](Bundle-8c3f35d7-7437-4fcf-90d2-49e04701d0ec.html)
 
 ### Third to fifth event June 15th to June29th
-Bruno har første gang på holdet 'Madlavning i praksis' d. 15. juni, og møder i alt tre gange af to timer. Dette medfører en indberetning til KLGateway af tid forbrugt på kontakterne.
+Bruno har første gang på holdet 'Madlavning i praksis' d. 15. juni, og møder i alt tre gange af to timer. Dette medfører en indberetning til Gateway af tid forbrugt på kontakterne.
 
 De tre rapporter vil være næsten ens, og derfor er det udelukkende rapporten fra 29. juni, der vises her. Læg mærke til at rapporten ikke indeholder tidligere indberettede kontakter - det er fordi de hverken ændrer sig eller refereres.
 

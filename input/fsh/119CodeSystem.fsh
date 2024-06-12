@@ -1,11 +1,11 @@
-CodeSystem: Tempcodes
-Id: Tempcodes
-Title: "Tempcodes"
-Description: "Tempcodes to be implemented in KL-term"
-//* #7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0 "Første kontakt i forløb"
-* ^experimental = false
-* ^caseSensitive = true
-* #ef491570-7884-4acd-bcf7-43d6b2c64762 "Borger har ikke henvendt sig eller er udeblevet"
+// CodeSystem: Tempcodes
+// Id: Tempcodes
+// Title: "Tempcodes"
+// Description: "Tempcodes to be implemented in KL-term"
+// * #7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0 "Første kontakt i forløb"
+// * ^experimental = false
+// * ^caseSensitive = true
+// * #ef491570-7884-4acd-bcf7-43d6b2c64762 "Borger har ikke henvendt sig eller er udeblevet"
 
 
 ValueSet: CancellationTypes
@@ -21,15 +21,8 @@ Description: "Cancellation valueset, to be implemented in KL-term and FKI"
 * $KLCommonCodes#8371b769-4bfb-4ac8-b130-d91c54784a56 //"Aktivt fravalg pga. logistik ifm. transport"
 * $KLCommonCodes#a3f2bd01-078b-486e-81be-797d192ad7bd //"Aktivt fravalg pga. anden træning"
 * $KLCommonCodes#82e99421-31da-4915-96ed-168ccfa1d20c //"Hændelse medfører ophør"
-* Tempcodes#ef491570-7884-4acd-bcf7-43d6b2c64762
-//kl-term update - change Tempcodes to KLCommonCodes
-// ValueSet: ExtendedEncounterTypes
-// Id: ExtendedEncounterTypes
-// Title: "ExtendedEncounterTypes"
-// Description: "Extension on encountertype valueset, to be implemented in KL-term and FKI"
-// * ^experimental = false
-// * include codes from valueset http://fhir.kl.dk/term/ValueSet/KLEncounterTypes
-//* Tempcodes#7273c0b7-1a0d-4c4a-a202-c014b1ddd4a0
+* $KLCommonCodes#ef491570-7884-4acd-bcf7-43d6b2c64762 // "Borger har ikke henvendt sig eller er udeblevet"
+
 
 ValueSet: ServiceTypes119
 Id: ServiceTypes119
@@ -49,7 +42,7 @@ Description: "Intervention codes allowed in this implementation guide. Notice th
 ValueSet: KLConditionCodes119
 Id: KLConditionCodes119
 Title: "KLConditionCodes119"
-Description: "Condition codes allowed in this implementation guide. . Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
+Description: "Condition codes allowed in this implementation guide. Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
 * ^experimental = false
 * include codes from valueset $KLConditionCodes119
 * exclude $FSIII#525b5dd8-d62b-4efa-bf66-262ac47eca5b
