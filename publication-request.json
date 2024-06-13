@@ -6,6 +6,5 @@
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "first" : true,
     "desc" : "Release of 2.0.0 with simplification changes implemented"
   }

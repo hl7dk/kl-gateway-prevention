@@ -6,22 +6,22 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-06-02T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41"
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41"
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/19f30aa7-db71-4dd2-87a1-d82ca2e9b737"
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/19f30aa7-db71-4dd2-87a1-d82ca2e9b737"
 * entry[=].resource = 19f30aa7-db71-4dd2-87a1-d82ca2e9b737
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/fe9664a3-e21c-40c9-a4cc-61bf647cf161"
+* entry[+].fullUrl = "https://test.fhir.dk/Condition/fe9664a3-e21c-40c9-a4cc-61bf647cf161"
 * entry[=].resource = fe9664a3-e21c-40c9-a4cc-61bf647cf161
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/ServiceRequest/3050d118-89a5-4bf4-85b9-a094e3277de4"
+* entry[+].fullUrl = "https://test.fhir.dk/ServiceRequest/3050d118-89a5-4bf4-85b9-a094e3277de4"
 * entry[=].resource = 3050d118-89a5-4bf4-85b9-a094e3277de4
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36"
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36"
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/7c45824a-9b19-4674-b4a7-c75c674bbb2e"
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/7c45824a-9b19-4674-b4a7-c75c674bbb2e"
 * entry[=].resource = 7c45824a-9b19-4674-b4a7-c75c674bbb2e
 
 
@@ -101,25 +101,25 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-06-10T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/7c45824a-9b19-4674-b4a7-c75c674bbb2e" //Afklarende samtale afsluttet
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/7c45824a-9b19-4674-b4a7-c75c674bbb2e" //Afklarende samtale afsluttet
 * entry[=].resource = 7c45824a-9b19-4674-b4a7-c75c674bbb2e-v2
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/284d264b-daa1-44d5-a8c9-52ef90235eaa" //Afklarende samtales kontakt
+* entry[+].fullUrl = "https://test.fhir.dk/Encounter/284d264b-daa1-44d5-a8c9-52ef90235eaa" //Afklarende samtales kontakt
 * entry[=].resource = 284d264b-daa1-44d5-a8c9-52ef90235eaa
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/c2a47519-ae53-46c3-b9f2-5257f4c5b79e" //Brunos tilstand ernæring
+* entry[+].fullUrl = "https://test.fhir.dk/Condition/c2a47519-ae53-46c3-b9f2-5257f4c5b79e" //Brunos tilstand ernæring
 * entry[=].resource = c2a47519-ae53-46c3-b9f2-5257f4c5b79e
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/1b068b69-afa0-46f8-bb20-a5220c65a079" //Brunos 119 indsatsforløb
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/1b068b69-afa0-46f8-bb20-a5220c65a079" //Brunos 119 indsatsforløb
 * entry[=].resource = 1b068b69-afa0-46f8-bb20-a5220c65a079
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/de7fe001-04f4-4e9a-8b4e-3849a3c6a521" //Brunos indsats: Madlavning i praksis
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/de7fe001-04f4-4e9a-8b4e-3849a3c6a521" //Brunos indsats: Madlavning i praksis
 * entry[=].resource = de7fe001-04f4-4e9a-8b4e-3849a3c6a521
 
 
@@ -201,16 +201,16 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-06-29T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/1b068b69-afa0-46f8-bb20-a5220c65a079" //Brunos 119 indsatsforløb, som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/1b068b69-afa0-46f8-bb20-a5220c65a079" //Brunos 119 indsatsforløb, som tidligere
 * entry[=].resource = 1b068b69-afa0-46f8-bb20-a5220c65a079
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/0e553e46-8482-4aa3-9207-2a37d6c71406" // Kontakt på indsatsforløb
+* entry[+].fullUrl = "https://test.fhir.dk/Encounter/0e553e46-8482-4aa3-9207-2a37d6c71406" // Kontakt på indsatsforløb
 * entry[=].resource = 0e553e46-8482-4aa3-9207-2a37d6c71406
 
 
@@ -235,22 +235,22 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-07-04T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41"
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41"
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/398c214e-2ae6-4c69-8daa-351769c2dbe5" //holbæk suýgehus
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/398c214e-2ae6-4c69-8daa-351769c2dbe5" //holbæk suýgehus
 * entry[=].resource = 398c214e-2ae6-4c69-8daa-351769c2dbe5
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/21ade6b2-d9a1-4564-bd91-b841bbae7ccc" //KOL
+* entry[+].fullUrl = "https://test.fhir.dk/Condition/21ade6b2-d9a1-4564-bd91-b841bbae7ccc" //KOL
 * entry[=].resource = 21ade6b2-d9a1-4564-bd91-b841bbae7ccc
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/ServiceRequest/4fb11af4-d0e3-4a28-8a6b-375c35629a58" //anmodning om sygdomsmestring fra kommunen
+* entry[+].fullUrl = "https://test.fhir.dk/ServiceRequest/4fb11af4-d0e3-4a28-8a6b-375c35629a58" //anmodning om sygdomsmestring fra kommunen
 * entry[=].resource = 4fb11af4-d0e3-4a28-8a6b-375c35629a58
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //Som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //Som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/364ae8f2-75b4-43a0-8010-e79ba38f7990" //behovssamtale
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/364ae8f2-75b4-43a0-8010-e79ba38f7990" //behovssamtale
 * entry[=].resource = 364ae8f2-75b4-43a0-8010-e79ba38f7990
 
 
@@ -307,25 +307,25 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-06-10T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/364ae8f2-75b4-43a0-8010-e79ba38f7990" //Behovssamtale afsluttet
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/364ae8f2-75b4-43a0-8010-e79ba38f7990" //Behovssamtale afsluttet
 * entry[=].resource = 364ae8f2-75b4-43a0-8010-e79ba38f7990-v2
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/6daa6b0e-b89a-4b4a-b057-ec02316a05be" //Behovssamtales kontakt
+* entry[+].fullUrl = "https://test.fhir.dk/Encounter/6daa6b0e-b89a-4b4a-b057-ec02316a05be" //Behovssamtales kontakt
 * entry[=].resource = 6daa6b0e-b89a-4b4a-b057-ec02316a05be
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence
+* entry[+].fullUrl = "https://test.fhir.dk/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence
 * entry[=].resource = b7b532ca-561f-4138-b94b-0285902dbc24
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb
 * entry[=].resource = 22695613-b50d-445d-aeb9-81937e3f3e47
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/1e4333ec-315c-4e98-b009-fcb77b8e8103" //Brunos indsats: sygdomshåndtering
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/1e4333ec-315c-4e98-b009-fcb77b8e8103" //Brunos indsats: sygdomshåndtering
 * entry[=].resource = 1e4333ec-315c-4e98-b009-fcb77b8e8103
 
 Instance: 364ae8f2-75b4-43a0-8010-e79ba38f7990-v2
@@ -406,31 +406,31 @@ Usage: #example
 * type = #collection
 * timestamp = 2022-09-30T23:25:12Z
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Patient/e6ce3367-d224-4817-8852-302ae75f7d41" //Bruno som tidligere
 * entry[=].resource = e6ce3367-d224-4817-8852-302ae75f7d41
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
+* entry[+].fullUrl = "https://test.fhir.dk/Organization/9d4a1ea8-d7c6-4776-9e93-911ed10d4d36" //udfører som tidligere
 * entry[=].resource = 9d4a1ea8-d7c6-4776-9e93-911ed10d4d36
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence afsluttes
+* entry[+].fullUrl = "https://test.fhir.dk/Condition/b7b532ca-561f-4138-b94b-0285902dbc24" //Brunos tilstand sundhedskompetence afsluttes
 * entry[=].resource = b7b532ca-561f-4138-b94b-0285902dbc24-v2
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb afsluttes
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/22695613-b50d-445d-aeb9-81937e3f3e47" //Brunos 119 indsatsforløb afsluttes
 * entry[=].resource = 22695613-b50d-445d-aeb9-81937e3f3e47-v2
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/1e4333ec-315c-4e98-b009-fcb77b8e8103" //Brunos indsats: Madlavning i praksis afsluttes
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/1e4333ec-315c-4e98-b009-fcb77b8e8103" //Brunos indsats: Madlavning i praksis afsluttes
 * entry[=].resource = 1e4333ec-315c-4e98-b009-fcb77b8e8103-v2
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/e91f631d-6f99-4eb9-9f07-dce1d4f4e54f" //Brunos indsats: Afsluttende samtale
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/e91f631d-6f99-4eb9-9f07-dce1d4f4e54f" //Brunos indsats: Afsluttende samtale
 * entry[=].resource = e91f631d-6f99-4eb9-9f07-dce1d4f4e54f
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Enconter/d7646272-58a4-4bfc-a434-b89d4c826cf9" //Brunos kontakt på afsluttende samtale
+* entry[+].fullUrl = "https://test.fhir.dk/Enconter/d7646272-58a4-4bfc-a434-b89d4c826cf9" //Brunos kontakt på afsluttende samtale
 * entry[=].resource = d7646272-58a4-4bfc-a434-b89d4c826cf9
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/0ce001f0-91c0-4b8c-8604-e94efb46bb45" //Brunos 119 opfølgningsforløb
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/0ce001f0-91c0-4b8c-8604-e94efb46bb45" //Brunos 119 opfølgningsforløb
 * entry[=].resource = 0ce001f0-91c0-4b8c-8604-e94efb46bb45
 
-* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/998df1b7-2339-46ec-9672-07178b04a6d8" //Brunos 119 planlagt opfølgning
+* entry[+].fullUrl = "https://test.fhir.dk/CarePlan/998df1b7-2339-46ec-9672-07178b04a6d8" //Brunos 119 planlagt opfølgning
 * entry[=].resource = 998df1b7-2339-46ec-9672-07178b04a6d8
 
 Instance: b7b532ca-561f-4138-b94b-0285902dbc24-v2
