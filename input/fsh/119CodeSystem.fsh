@@ -34,18 +34,35 @@ Description: "The service types allowed in §119"
 ValueSet: KLInterventionCodes119
 Id: KLInterventionCodes119
 Title: "KLInterventionCodes119"
-Description: "Intervention codes allowed in this implementation guide. Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
+Description: "Intervention codes allowed in this implementation guide."
 * ^experimental = false
-* include codes from valueset http://fhir.kl.dk/term/ValueSet/KLPreventionInterventionsFSIII
-* exclude $FSIII#c203c6b5-3be0-40a8-8204-e93751deabf5
+* $FSIII#01a500f6-c221-4fd0-b518-cd361218b60d // Madlavning i praksis	
+* $FSIII#03a3ebdb-9e2d-4be1-b32b-42f0bd2a3362 // Afsluttende samtale
+* $FSIII#61692d91-69b8-4830-9453-3d58454e49d3 // Færdighedstræning
+* $FSIII#6d24992e-e0a2-43e7-bc27-0234622a8655 // Nikotin- og tobaksafvænning	
+* $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c // Afklarende samtale
+* $FSIII#924e9828-84cf-4689-9551-0ebb6dc71b98 // Samtale om alkohol
+* $FSIII#ab87c0b5-40be-4e0a-b749-d9f833bfed2d // Fysisk træning
+* $FSIII#abe847e0-1ce0-44dc-a675-ce05b66f47e6 // Vejledning og introduktion til fysiske aktiviteter
+* $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c // Kostvejledning
+* $FSIII#cf7a55c2-7061-47ed-b7c5-e29620fe93bf // Diætbehandling
+* $FSIII#d1e016b5-150a-4ac4-97ba-d3e19e28471e // Opfølgning
+* $FSIII#e71b7d85-5c78-49c2-8624-8499d162317b // Sygdomshåndtering	
+* $FSIII#ee5606ac-1bed-487e-aa3c-72dcc30ec037 // Behovssamtale	
+* $FSIII#f30cab6d-2a42-4358-99d7-811127fb6e05 // Mental håndtering
 
 ValueSet: KLConditionCodes119
 Id: KLConditionCodes119
 Title: "KLConditionCodes119"
-Description: "Condition codes allowed in this implementation guide. Notice that codes are excluded to prevent reporting on concepts that are inactivated in the simplification."
+Description: "Condition codes allowed in this implementation guide."
 * ^experimental = false
-* include codes from valueset $KLConditionCodes119
-* exclude $FSIII#525b5dd8-d62b-4efa-bf66-262ac47eca5b
+* include codes from system $FSIII where concept descendent-of #d03da587-94dc-46e6-ba71-eb1e43ec7df6 //Kroppen
+* include codes from system $FSIII where concept descendent-of #7b3b3587-4ddd-4b93-a81b-455bfc601492 //Hverdagsliv
+* include codes from system $FSIII where concept descendent-of #b349c7ec-86c5-4c52-aaf2-9034d98b0e3b //Sundhedsadfærd
+* $FSIII#0520a107-2bb0-47b8-8856-c53e27607e51 //Kognitiv funktion
+* $FSIII#43ad3091-f684-4d6f-8885-20ecd1cf2255 //Kropspfattelse
+* $FSIII#ba083ca7-fe46-41d0-acd5-85851ac8137f //Trivsel
+* $FSIII#cb55874a-93d9-45c7-a25a-8ff677c24385 //Søvn og hvile
 
 ValueSet: CarePlanCategories119
 Id: CarePlanCategories119

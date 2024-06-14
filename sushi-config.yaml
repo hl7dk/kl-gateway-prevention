@@ -18,7 +18,7 @@ dependencies:
   hl7.fhir.dk.core: 3.2.0
   #  uri: https://hl7.dk/fhir/core
   #  version: 2.3.0
-  kl.dk.fhir.term: current
+  kl.dk.fhir.term: 2.1.0
 # kl-term update
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
