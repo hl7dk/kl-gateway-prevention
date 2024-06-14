@@ -7,7 +7,7 @@ canonical: http://fhir.kl.dk/prevention
 name: KLGatewayPrevention
 description: Danish municipalities implementation guide for reporting §119 disease prevention and health promotion
 status: active
-version: 1.0.0
+version: 2.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2023+
 releaseLabel: Release #ci-build
@@ -15,10 +15,10 @@ publisher:
   name: Kommunernes Landsforening
   url: http://kl.dk
 dependencies:
-  hl7.fhir.dk.core:
-    uri: https://hl7.dk/fhir/core
-    version: 2.1.0
-  kl.dk.fhir.term: 1.1.0
+  hl7.fhir.dk.core: 3.2.0
+  #  uri: https://hl7.dk/fhir/core
+  #  version: 2.3.0
+  kl.dk.fhir.term: 2.1.0
 # kl-term update
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -26,3 +26,4 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+  Example: example.html

@@ -5,6 +5,8 @@ The managing organization is given by its SOR code. For most municipalities this
 
 Patient.deceasedBoolean is a statement of whether the citizen is alive or dead.
 
+Patient.active is optional and assumed true, if not given. Patient.active = false is used to report  entered-in-error. However, this option should only be used, if the patient is fully unknown to the municipality system, and should never have been in the system at all.
+
 ### Conversions between Danish information model and FHIR-profile
 
 Nedenstående tabel oversætter mellem de attributter, der er defineret i den fælleskommunale informationsmodel (FKI), definerer kort den enkelte attribut på dansk og specificerer, hvilke af FHIR-profilens atributter der skal bruges til specifikation af indholdet. 
@@ -15,3 +17,4 @@ Nedenstående tabel oversætter mellem de attributter, der er defineret i den f�
 |borgerCprNummer|Officielt cpr-nummer på borgeren|Patient.identifier.value|
 |borgerErDød|boolesk værdi der er sand hvis borgeren er død|Patient.deceasedBoolean|
 |borgerJournalførendeOrganisation|Organisation som ejer journalen med oplysninger|Patient.managingOrganization.identifier.value|
+|borgerHarAktivJournal|Angiver om borger har en aktiv journal i den journalførende organisation eller ej|Patient.active|

@@ -3,6 +3,8 @@ Parent: Bundle
 Id: klgateway-119-delivery-report
 Title: "KLGateway119DeliveryReport"
 Description: "Delivery report to deliver data for each citizen."
+* meta.profile 1..1
+* meta.profile = "http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-delivery-report"
 * identifier ..0
 * type = #collection
 * timestamp 1..1
@@ -11,8 +13,10 @@ Description: "Delivery report to deliver data for each citizen."
 * entry.link 0..0
 * entry.resource 1..1
 * entry.resource only
-    Condition or
-    CarePlan or
+    klgateway-119-condition or
+    klgateway-119-focus-condition or
+    klgateway-119-care-plan or
+    klgateway-119-planned-intervention or
     klgateway-119-encounter or
     klgateway-119-organization or
     klgateway-119-citizen or
@@ -30,26 +34,26 @@ Description: "Delivery report to deliver data for each citizen."
 * signature ..0
 * entry[citizen] ^short = "[DK] indberetningsrapportBorger"
 * entry ^short = "[DK] indberetningsrapportIndhold"
-* obeys gateway-119-report-1
-* obeys gateway-119-report-2
+// * obeys gateway-119-report-1
+// * obeys gateway-119-report-2
 
 
-Invariant: gateway-119-report-1
-Description: "All condition resources shall conform to either klgateway-119-condition profile, or klgateway-119--focus-condition profile"
-Severity: #error
-Expression: "entry.select(resource as Condition).all(
-    $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-condition')
- or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-focus-condition'))"
+// Invariant: gateway-119-report-1
+// Description: "All condition resources shall conform to either klgateway-119-condition profile, or klgateway-119--focus-condition profile"
+// Severity: #error
+// Expression: "entry.select(resource as Condition).all(
+//     $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-condition')
+//  or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-focus-condition'))"
 
-Invariant: gateway-119-report-2
-Description: "All CarePlan resources shall conform to either klgateway-119-careplan profile, or klgateway-119-planned-intervention profile"
-Severity: #error
-Expression: "entry.select(resource as CarePlan).all(
-    $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-care-plan')
- or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-planned-intervention'))"
+// Invariant: gateway-119-report-2
+// Description: "All CarePlan resources shall conform to either klgateway-119-careplan profile, or klgateway-119-planned-intervention profile"
+// Severity: #error
+// Expression: "entry.select(resource as CarePlan).all(
+//     $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-care-plan')
+//  or $this.conformsTo('http://fhir.kl.dk/prevention/StructureDefinition/klgateway-119-planned-intervention'))"
 
 // Invariant: gateway-119-report-3
-// Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan with category-code 'interventionsforløb §119'."
+// Description: "Planned interventions with a treatment focus, should have its basedOn attribute populated with a carePlan with category-code 'interventionsforløb §119'."
 // Severity: #error
 // Expression: "entry.select((resource as CarePlan).where(
 //     activity.detail.code.coding.code = 'e78c43e3-c512-44b4-ad30-2de43481d9b3'
@@ -77,25 +81,25 @@ Description: "Indberetning for Bruno"
 Usage: #example
 * type = #collection
 * timestamp = 2020-08-14T00:00:00Z
-* entry[+].fullUrl = "Patient/BrunoTestElmer"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Patient/BrunoTestElmer"
 * entry[=].resource = BrunoTestElmer
-* entry[+].fullUrl = "Organization/UdfoererAfBrunosForebyggelse"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/UdfoererAfBrunosForebyggelse"
 * entry[=].resource = UdfoererAfBrunosForebyggelse
-* entry[+].fullUrl = "Organization/AfsenderAfBrunosHenvisning"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Organization/AfsenderAfBrunosHenvisning"
 * entry[=].resource = AfsenderAfBrunosHenvisning
-* entry[+].fullUrl = "Condition/BrunoAktionsdiagnoseRequest"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/BrunoAktionsdiagnoseRequest"
 * entry[=].resource = BrunoAktionsdiagnoseRequest
-* entry[+].fullUrl = "ServiceRequest/BrunoRequestInformation"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/ServiceRequest/BrunoRequestInformation"
 * entry[=].resource = BrunoRequestInformation
-* entry[+].fullUrl = "CarePlan/BrunoAfklarendeSamtale"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/BrunoAfklarendeSamtale"
 * entry[=].resource = BrunoAfklarendeSamtale
-* entry[+].fullUrl = "Encounter/BrunoKontaktAfklarende"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/BrunoKontaktAfklarende"
 * entry[=].resource = BrunoKontaktAfklarende
-* entry[+].fullUrl = "CarePlan/BrunoforloebKost"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/BrunoforloebKost"
 * entry[=].resource = BrunoforloebKost
-* entry[+].fullUrl = "CarePlan/BrunoKostvejledning"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/CarePlan/BrunoKostvejledning"
 * entry[=].resource = BrunoKostvejledning
-* entry[+].fullUrl = "Encounter/BrunoKontakt1Kost"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Encounter/BrunoKontakt1Kost"
 * entry[=].resource = BrunoKontakt1Kost
-* entry[+].fullUrl = "Condition/BrunoTilstand"
+* entry[+].fullUrl = "https://care-gateway.test001.ehealth.sundhed.dk/fhir/Condition/BrunoTilstand"
 * entry[=].resource = BrunoTilstand

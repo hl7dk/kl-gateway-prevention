@@ -111,7 +111,7 @@ Description: "Planned interventions for §119 prevention/health promotion in Dan
 * obeys klgateway-119-intervention-2
 
 Invariant: klgateway-119-intervention-1
-Description: "Plannend interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
+Description: "Planned interventions with a treatment focus, should have its basedOn attribute populated with a carePlan."
 Severity: #error
 Expression: "activity.detail.code.coding.code = 'f30cab6d-2a42-4358-99d7-811127fb6e05'
     or activity.detail.code.coding.code = 'e71b7d85-5c78-49c2-8624-8499d162317b'
@@ -155,7 +155,7 @@ Title: "BrunoAfklarendeSamtale"
 Description: "Bruno's afklarende Samtale"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#6eddbaf7-2a73-49d4-91e7-6138d419f58c //Afklarende samtale
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-05-31
 * period.end = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -171,7 +171,7 @@ Title: "BrunoKostvejledning"
 Description: "Bruno's Kostvejledning"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
@@ -188,7 +188,7 @@ Title: "BrunoKostvejledningValidationError"
 Description: "BrunoKostvejledningValidationError"
 Usage: #example
 * activity.detail.code.coding[level2] = $FSIII#c9a99304-1788-43b7-b7be-e187b092ae9c "Kostvejledning"
-* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel Indsats"
+* activity.detail.extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * period.start = 2022-06-02
 * status = http://hl7.org/fhir/request-status#active
 * intent = http://hl7.org/fhir/care-plan-intent#plan

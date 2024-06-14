@@ -1,15 +1,10 @@
 {
     "package-id" : "kl.dk.fhir.prevention",
-    "version" : "1.0.0",
-    "path" : "http://fhir.kl.dk/prevention/1.0.0",
+    "version" : "2.0.0",
+    "path" : "http://fhir.kl.dk/prevention/2.0.0",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "title" : "KLGatewayPrevention",
-    "first" : true,
-    "desc" : "Initial release",
-    "ci-build" : "https://build.fhir.org/ig/hl7dk/kl-gateway-prevention/",
-    "category" : "Clinical Registries",
-    "introduction" : "This IG includes models for reporting disease prevention and health promotion data from Danish Municipalities for secondary purposes."
+    "desc" : "Release of 2.0.0 with simplification changes implemented"
   }

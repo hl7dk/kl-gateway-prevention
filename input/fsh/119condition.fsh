@@ -27,7 +27,7 @@ Description: "Detailed information about condition relating to §119 care pathwa
 * category.text ..0
 * severity 0..0
 * code 1..1
-* code from $KLConditionCodes119 (required)
+* code from KLConditionCodes119 (required)
 * code.coding 1..1
 * bodySite ..0
 * subject only Reference(klgateway-119-citizen)
