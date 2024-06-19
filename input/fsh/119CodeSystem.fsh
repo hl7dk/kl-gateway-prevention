@@ -79,3 +79,11 @@ Title: "DeliveryTypes"
 Description: "The delivery context types allowed in §119 prevention. Whether intervention is group based or delivered individually"
 * ^experimental = false
 * include codes from system $KLCommonCodes where concept descendent-of #3f79cee2-b148-4f2c-9cbd-387820e74685
+
+ValueSet: EncounterClassCodes
+Title: "KontaktKlasseKoder"
+Description: "Codes to describe the mode of delivery of an encounter"
+* ^experimental = false
+* include codes from valueset http://terminology.hl7.org/ValueSet/v3-ActEncounterCode
+* $KLCommonCodes#1b55a4b0-1156-4f58-b2df-b5c6014d9048 //"Telefonisk" KLCommonCareSocialCodes
+* $KLCommonCodes#124be95d-6924-4609-9d2a-e7c73ae3ab3d //"Skærmbesøg" KLCommonCareSocialCodes
