@@ -76,7 +76,7 @@ Title: "BrunoKontakt1Kost"
 Description: "Brunos kontakt, hvor han har første kostvejledning som skærmbesøg"
 Usage: #example
 * status = http://hl7.org/fhir/encounter-status#finished
-* class = * $KLCommonCodes##124be95d-6924-4609-9d2a-e7c73ae3ab3d "Skærmbesøg"
+* class = $KLCommonCodes##124be95d-6924-4609-9d2a-e7c73ae3ab3d "Skærmbesøg"
 * period.start = 2022-06-09T10:00:00.000Z
 * period.end = 2022-06-09T10:30:00.000Z
 * subject = Reference(BrunoTestElmer)
